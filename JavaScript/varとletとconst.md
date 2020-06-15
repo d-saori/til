@@ -12,17 +12,17 @@ var hoge = '再宣言OK';
 # let
 - 再宣言が禁止されている<br>
 ```
-var hoge = '初期値OK';
+let hoge = '初期値OK';
 hoge = '再代入OK';
-var hoge = '再宣言NG';
+let hoge = '再宣言NG';
 ```
 
 # const
 - 再宣言、再代入が禁止されている<br>
 ```
-var hoge = '初期値OK';
+const hoge = '初期値OK';
 hoge = '再代入NG';
-var hoge = '再宣言OK';
+const hoge = '再宣言OK';
 ```
 <br>
 
