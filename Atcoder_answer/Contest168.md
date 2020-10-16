@@ -1,7 +1,7 @@
 - A問題(https://atcoder.jp/contests/abc168/tasks/abc168_a)
 
 ```
-input = gets.to_i
+input = gets.chomp.to_s
 
 num = input.length - 1
 hon_num = [2, 4, 5, 7, 9]
