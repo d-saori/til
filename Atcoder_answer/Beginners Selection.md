@@ -79,20 +79,22 @@ puts count
 a, b, c, x = 4.times.map{gets.to_i}
 
 count = 0
-
-(0..a).each do |i|
-  if 500 * i <= x
-    (0..b).each do |j|
-      if 500 * i + 100 * j <= x
-        (0..c).each do |k|
-          if 500 * i + 100 * j + 50 * k == x
-            count += 1
-          end
-        end
+# 多重each文で全探索
+(0..a).each { |i|      # 500円玉が 0枚〜i枚 の場合 (i + 1 通り) を全て探索
+  (0..b).each { |j|    # 100円玉が 0枚〜j枚 の場合 (j + 1 通り) を全て探索
+    (0..c).each { |k|  # 50円玉が 0枚〜k枚 の場合 (k + 1 通り) を全て探索
+      if x == (500 * i + 100 * j + 50 * k)
+        count += 1
+      else
+        count += 0
       end
-    end
-  end
-end
-
+    }
+  }
+} 
 puts count
+```
+
+- Some Sums(https://atcoder.jp/contests/abs/tasks/abc083_b)
+```
+
 ```
