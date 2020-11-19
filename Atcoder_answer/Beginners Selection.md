@@ -96,5 +96,43 @@ puts count
 
 - Some Sums(https://atcoder.jp/contests/abs/tasks/abc083_b)
 ```
+n, a, b = gets.split(" ").map(&:to_i)
+sum = 0
+(1..n).each do |i|
+  # この時点でiはsplitされた配列、splitは文字列に有効だからto_s
+  x = i.to_s.split("").map(&:to_i).sum
+  if x >= a && x <= b
+    sum += i
+  end
+end
+puts sum
+```
+
+- Card Game for Two(https://atcoder.jp/contests/abs/tasks/abc088_b)
+```
+n = gets.to_i
+arr = gets.split(" ").map(&:to_i).sort.reverse # 数の大きい順に並べる
+# 要素をインデックス番号、偶数番目と奇数番目とで分けたい。(https://qiita.com/ddd555/items/ed7db4b342b783620b41)を参考にする。
+# Aliceはインデックス番号0と偶数の時のカード番号
+a_arr = arr.each_slice(2).map(&:first)
+# Bobは1から始まる奇数のインデックス番号
+b_arr = arr.each_slice(2).map(&:last) 
+p (a_arr.sum) - (b_arr.sum)
+
+# nが奇数の時Bobのカード枚数が1枚多くなってしまう
+# slice(2)で要素が1つの最後の配列をfirstとlastそれぞれでカウントしてしまってダメ
+
+違う方法
+n = gets.to_i
+arr = gets.split(" ").map(&:to_i).sort.reverse # 数の大きい順に並べる
+# インデックス番号が偶数の要素の合計(Aliceのカード合計)を求める
+a_arr = arr.select.with_index { |e, i| i % 2 == 0 }.sum
+# 配列全体の合計から↑の合計を引いて、インデックス番号が奇数の合計(Bobのカード合計)を求める
+b_arr = arr.sum - a_arr
+puts a_arr - b_arr
+```
+
+- Kagami Mochi（https://atcoder.jp/contests/abs/tasks/abc085_b）
+```
 
 ```
