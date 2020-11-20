@@ -134,5 +134,10 @@ puts a_arr - b_arr
 
 - Kagami Mochi（https://atcoder.jp/contests/abs/tasks/abc085_b）
 ```
-
+n = gets.to_i
+# 要素n個の配列ができる
+a = n.times.map{gets.chomp.to_i}
+# 配列aから重複した要素を取り除いた要素数（＝鏡餅の段数）を求める
+p a.uniq.count
 ```
+
