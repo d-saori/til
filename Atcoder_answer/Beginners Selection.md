@@ -141,3 +141,7 @@ a = n.times.map{gets.chomp.to_i}
 p a.uniq.count
 ```
 
+- Otoshidama(https://atcoder.jp/contests/abs/tasks/abc085_c)
+```
+
+```
