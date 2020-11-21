@@ -143,5 +143,21 @@ p a.uniq.count
 
 - Otoshidama(https://atcoder.jp/contests/abs/tasks/abc085_c)
 ```
+n, y = gets.chomp.split(" ").map(&:to_i)
+
+# 計算時間短縮の為、札の枚数3種類のうち2種類のみ探索する(2種類わかれば残りは総数nから引けば良い)
+(0..n).each do |i|
+  (0..n - i).each do |j|
+    if 10000 * i + 5000 * j + 1000 * (n - i - j) == y
+      puts "#{i} #{j} #{n - i - j}"
+      exit
+    end
+  end
+end
+puts "-1 -1 -1"
+```
+
+- 白昼夢（https://atcoder.jp/contests/abs/tasks/arc065_a）
+```
 
 ```
