@@ -167,5 +167,5 @@ s = s.gsub("eraser", "")
      .gsub("erase", "")
      .gsub("dreamer", "")
      .gsub("dream", "")
-puts s.empty? ? "Yes" : "No"
+puts s.empty? ? "Yes" : "No" => puts s.length == 0 ? "YES":"NO" などでもOK
 ```
