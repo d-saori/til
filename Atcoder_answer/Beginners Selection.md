@@ -159,5 +159,13 @@ puts "-1 -1 -1"
 
 - 白昼夢（https://atcoder.jp/contests/abs/tasks/arc065_a）
 ```
+s = gets.chomp
 
+# 先頭から順に読み上げていくと"dream"が"dreamer"に被ってしまう(prefixの関係)
+# 後ろから順に分解する
+s = s.gsub("eraser", "")
+     .gsub("erase", "")
+     .gsub("dreamer", "")
+     .gsub("dream", "")
+puts s.empty? ? "Yes" : "No"
 ```
