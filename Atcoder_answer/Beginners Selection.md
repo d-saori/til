@@ -163,9 +163,43 @@ s = gets.chomp
 
 # 先頭から順に読み上げていくと"dream"が"dreamer"に被ってしまう(prefixの関係)
 # 後ろから順に分解する
+# Tは空文字列=Sに"dream dreamer erase eraser"が含まれていればSも空文字列になる
 s = s.gsub("eraser", "")
      .gsub("erase", "")
      .gsub("dreamer", "")
      .gsub("dream", "")
-puts s.empty? ? "Yes" : "No" => puts s.length == 0 ? "YES":"NO" などでもOK
+puts s.length == 0 ? "YES":"NO" などでもOK
+```
+
+- Traveling(https://atcoder.jp/contests/abs/tasks/arc089_a)
+```
+# パリティ:「偶数」と「奇数」に関する性質
+
+n = gets.to_i
+result = "Yes"
+
+n.times do
+  t = gets.split.map(&:to_i)
+  if (t[0] < t[1] + t[2]) || t.sum.odd?
+    result = "No"
+    break
+  end
+end
+
+puts result
+
+もしくは
+
+n = gets.to_i
+n.times do
+  t, x, y = gets.split.map(&:to_i)
+  distance = x + y
+  if t < distance || (distance - t).odd?
+    puts "No"
+    exit
+  end
+end
+ 
+puts "Yes"
+など
 ```
