@@ -2,6 +2,9 @@
 
 ```
 n = gets.chomp.to_i
-
 puts (n / 2.to_f).ceil
+
+もしくは
+n = gets.to_f
+puts (n / 2).round
 ```
