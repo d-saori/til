@@ -10,5 +10,7 @@ end
 
 - B問題（https://atcoder.jp/contests/abc072/tasks/abc072_b）
 ```
-
+s = gets.split("")
+even = s.each_slice(2).map(&:first)
+puts even.join
 ```
