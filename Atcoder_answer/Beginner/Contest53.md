@@ -17,5 +17,7 @@ puts x.gets.to_i < 1200 ? "ABC" : "ARC"
 
 - B問題（https://atcoder.jp/contests/abc053/tasks/abc053_b）
 ```
-
+s = gets
+p s.slice(/A.+Z/).length
+# p s.slice(/A.*Z/).lengthでもOK
 ```
