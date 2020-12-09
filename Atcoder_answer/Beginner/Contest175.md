@@ -14,13 +14,18 @@ elsif S == "SSR" or S == "RRS"
 else
   puts 1
 end
-```
 
-<br>
-
-```
 # その他の回答
 # coding: utf-8
 # R+でRに合致する最大のRをarrayに格納して返す。そこからもっとも長いRの長さを取得して、||0でnilガード。そこからsizeをとる
 p (gets.scan(/R+/).max || "").size
+```
+
+- B問題（https://atcoder.jp/contests/abc175/tasks/abc175_b）
+```
+n = gets.to_i
+ary = gets.split.map!(&:to_i).sort!
+# 三角形ができる条件：二辺の合計が一番長い辺より大きい
+
+puts ary.combination(3).count { |a, b, c| a < b && b < c && (a + b > c)}
 ```
