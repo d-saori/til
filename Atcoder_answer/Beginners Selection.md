@@ -98,13 +98,13 @@ puts count
 ```
 n, a, b = gets.split(" ").map(&:to_i)
 sum = 0
-(1..n).each do |i|
-  # この時点でiはsplitされた配列、splitは文字列に有効だからto_s
-  x = i.to_s.split("").map(&:to_i).sum
+(1..n).each { |i|
+  # この時点でiはsplitされた配列、charsは文字列に有効だからto_s
+  x = i.to_s.chars.map(&:to_i).sum
   if x >= a && x <= b
     sum += i
   end
-end
+}
 puts sum
 ```
 
