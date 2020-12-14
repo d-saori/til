@@ -22,7 +22,7 @@ road = m.times.map{gets.split.map(&:to_i)}
   cnt = 0
 # 全ての道路の両端にi番目の都市が含まれているか判定し、数える
   road.each { |r|
-    cnt = cnt + 1 if r.include?(i)
+    cnt += 1 if r.include?(i)  # cnt = cnt + 1 if r.include?(i)
   }
 # 数えた道路の本数をi番目の都市から伸びている道路の本数として出力
   puts cnt
