@@ -21,3 +21,19 @@ ans = "None"
 }
 puts ans
 ```
+
+- C問題（https://atcoder.jp/contests/abc081/tasks/arc086_a）
+```
+n, k = gets.split.map(&:to_i)
+a = gets.split.map(&:to_i).sort
+ans = 0
+
+if (num = a.uniq.count) > k
+  b = a.group_by(&:itself).map{ |k, v| [k, v.count] }.sort_by(&:last)
+  (num - k).times {|i|
+    ans += b[i][1]
+  }
+end
+
+puts ans
+```
