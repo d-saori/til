@@ -14,3 +14,29 @@ else
   puts "No"
 end
 ```
+
+- B問題（https://atcoder.jp/contests/abc088/tasks/abc088_b）
+```
+n = gets.to_i
+a = gets.split.map(&:to_i).sort.reverse
+alice = a.each_slice(2).map(&:first).sum
+bob = a.sum - alice
+puts alice - bob
+```
+
+- C問題（https://atcoder.jp/contests/abc088/tasks/abc088_c）
+```
+ary = 3.times.map{gets.split.map(&:to_i)}
+
+aa = [0, 0, 0]
+bb = [0, 0, 0]
+cnt = 0
+(0..2).each { |i|
+  (0..2).each { |j|
+    aa[i] = ary[i][0] - bb[0]
+    bb[j] = ary[0][j] - aa[0]
+    cnt += 1 if ary[i][j] == aa[i] + bb[j]
+  }
+}
+puts cnt == 9 ? "Yes" : "No"
+```
