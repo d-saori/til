@@ -12,6 +12,7 @@ end
 
 - B問題（https://atcoder.jp/contests/abc144/tasks/abc144_b）
 ```
+# N = A * B となるような 1 以上 9 以下の整数 A, B が存在するかどうか全探索で確かめる
 n = gets.to_i
 ans = "No"
 (1..9).each { |i|
