@@ -13,3 +13,10 @@ else
   puts "C"
 end
 ```
+
+- B問題（https://atcoder.jp/contests/abc122/tasks/abc122_b）
+```
+s = gets
+a = s.scan(/[ACGT]+/).map{ |i| i.size }
+puts a.size == 0 ? 0 : a.max
+```
