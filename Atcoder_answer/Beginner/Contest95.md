@@ -21,3 +21,19 @@ a = n.times.map{gets.to_i}
 
 puts n + (x - a.sum) / (a.min)
 ```
+
+- c問題（https://atcoder.jp/contests/abc095/tasks/arc096_a）
+```
+a, b, c, x, y = gets.split.map(&:to_i)
+
+ma = a * x
+mb = b * y
+mc = 2 * c * [x, y].max
+md = 2 * c * [x, y].min
+if x > y
+  md += a * (x - y)
+else
+  md += b * (y - x)
+end
+puts [ma + mb, mc, md].min
+```
