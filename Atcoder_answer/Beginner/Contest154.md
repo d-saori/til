@@ -13,3 +13,9 @@ else t == u
   # puts [a, b - 1].join(' ')
 end 
 ```
+
+- B問題（https://atcoder.jp/contests/abc154/tasks/abc154_b）
+```
+s = gets
+puts s.gsub(/[a-z]/, "x")
+```
