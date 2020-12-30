@@ -25,3 +25,9 @@ n.times { |i|
 }
 puts ans
 ```
+
+- C問題（https://atcoder.jp/contests/abc148/tasks/abc148_c）
+```
+a, b = gets.split.map(&:to_i)
+puts a.lcm(b)
+```
