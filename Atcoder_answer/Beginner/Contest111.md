@@ -7,3 +7,19 @@
 n = gets.chomp
 puts n.tr("19", "91")
 ```
+
+- B問題（）
+```
+n = gets.to_i
+puts ((n - 1) / 111 + 1) * 111
+
+もしくは
+n = gets.to_i
+(n..999).each { |n|
+  a = n.to_s.chars
+  if a.uniq.size == 1
+    puts n
+    exit
+  end
+}
+```
