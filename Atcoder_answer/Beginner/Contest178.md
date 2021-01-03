@@ -2,10 +2,13 @@
 
 ```
 x = gets.to_i
-
 if x == 0
   puts 1
 else
   puts 0
 end
+
+# 三項演算子
+x = gets.to_i
+puts x == 0 ? 1 : 0
 ```
