@@ -16,11 +16,6 @@ end
 - 「文字列のi番目の文字」を得る方法を使う。
 
 ```
-S = gets.chomp
-
-if S[-1] == "s"
-  puts "#{S}" + "es"
-else
-  puts "#{S}" + "s"
-end
+s = gets.chomp
+puts s[-1] == "s" ? s + "es" : s + "s"
 ```
