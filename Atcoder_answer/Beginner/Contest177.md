@@ -18,10 +18,6 @@ end
   - 多くのプログラミング言語では、整数同士で割り算を行うと、小数部分が切り捨てられ、整数となるので、小数として計算する。
   
 ```
-D, T, S = gets.chomp.split(' ').map(&:to_f)
-if T >= D / S
-  puts "Yes"
-else
-  puts "No"
-end
+d, t, s = gets.split.map(&:to_f)
+puts d / s <= t ? "Yes" : "No"
 ```
