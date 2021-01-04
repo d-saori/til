@@ -9,5 +9,9 @@ x.each_with_index do |num, xi|
     puts xi + 1
   end
 end
+
+# 別解答
+x = gets.split.map(&:to_i)
+puts x.index(0) + 1
 ```
 
