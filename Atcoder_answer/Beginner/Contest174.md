@@ -2,11 +2,6 @@
 
 
 ```
-X = gets.chomp.to_i
-
-if X >= 30
-  puts "Yes"
-else
-  puts "No"
-end
+x = gets.to_i
+puts x >= 30 ? "Yes" : "No"
 ```
