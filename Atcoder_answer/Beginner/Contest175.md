@@ -16,9 +16,9 @@ else
 end
 
 # その他の回答
-# coding: utf-8
-# R+でRに合致する最大のRをarrayに格納して返す。そこからもっとも長いRの長さを取得して、||0でnilガード。そこからsizeをとる
-p (gets.scan(/R+/).max || "").size
+# 区切り文字に文字列を指定すると、その文字列の一致する部分で分割する
+s = gets.chomp.split("S")
+puts s.map(&:size).max.to_i
 ```
 
 - B問題（https://atcoder.jp/contests/abc175/tasks/abc175_b）
