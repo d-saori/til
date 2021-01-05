@@ -3,15 +3,10 @@
 ```
 s = gets.chomp
 t = gets.chomp
+puts s[0..-1] == t[0..-2] ? "Yes" : "No"
 
-if s == t[0, s.size]
-  puts 'Yes'
-else
-  puts 'No'
-end
-
+もしくは
 s = gets.chomp
 t = gets.chomp
-
 puts t.match?(/^#{s}.$/) ? 'Yes' : 'No'
 ```
