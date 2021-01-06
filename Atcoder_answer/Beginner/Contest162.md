@@ -1,11 +1,10 @@
 - A問題（https://atcoder.jp/contests/abc162/tasks/abc162_a）
 
 ```
-n = gets.chomp.to_i
+n = gets
+puts n[0] == "7" || n[1] == "7" || n[2] == "7" ? "Yes" : "No"
 
-if n.to_s.include?("7")
-  puts "Yes"
-else
-  puts "No"
-end
+# もしくは
+n = gets
+puts n.include?("7") ? "Yes" : "No"
 ```
