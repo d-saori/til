@@ -5,7 +5,12 @@
 # N個の中から選ぶ：N * (N - 1) / 2
 # M個の中から選ぶ：M * (M - 1) / 2
 
-n, m = gets.split(" ").map(&:to_i)
-
+n, m = gets.split.map(&:to_i) 
 puts n * (n - 1) / 2 + m * (m - 1) / 2
+
+# 別解答
+n, m = gets.split.map(&:to_i) 
+even = n.times.to_a
+odd = m.times.to_a
+puts even.combination(2).size + odd.combination(2).size
 ```
