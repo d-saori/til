@@ -2,7 +2,6 @@
 
 ```
 c = gets
-
 puts c.succ
 
 # 1行でも可
