@@ -8,6 +8,11 @@ all = [1, 2, 3]
 all.delete(a)
 all.delete(b)
 puts all
+
+# 別解答
+a = gets.to_i
+b = gets.to_i
+puts 6 - (a + b)
 ```
 
 - B問題（https://atcoder.jp/contests/abc148/tasks/abc148_b）
