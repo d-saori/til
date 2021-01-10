@@ -21,3 +21,10 @@ s.each do |i|
 end
 puts ans
 ```
+
+- B問題
+```
+n = gets
+a = n.chars.map { |i| i.to_i }.inject(:+)
+puts n.to_i % a == 0 ? "Yes" : "No"
+```
