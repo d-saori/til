@@ -1,7 +1,21 @@
 - A問題（https://atcoder.jp/contests/abc047/tasks/abc047_a）
 ```
-abc = gets.split.map(&:to_i).sort
-puts abc[0] + abc[1] == abc[2] ? "Yes" : "No"
+n, l = gets.split.map(&:to_i)
+s = gets.chomp.chars
+p = 1
+ans = 0
+s.each { |i|
+  if i == "+"
+    p += 1
+    if p > l
+      ans += 1
+      p = 1
+    end
+  else
+    p -= 1
+  end
+}
+puts ans
 ```
 
 - B問題（https://atcoder.jp/contests/abc047/tasks/abc047_b）
