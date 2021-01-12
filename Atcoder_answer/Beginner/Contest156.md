@@ -20,3 +20,13 @@ puts ans
 n, k = gets.split.map(&:to_i)
 puts n.to_s(k).size
 ```
+
+- C問題
+```
+# 解答例
+n = gets.to_i
+x = gets.split.map(&:to_i)
+puts (x.min..x.max).map { |i|
+  x.map { |x| (x - i) ** 2 }.sum
+}.min
+```
