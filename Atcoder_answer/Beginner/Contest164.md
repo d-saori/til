@@ -23,3 +23,10 @@ while true do
 end
 puts a > 0 ? "Yes" : "No"
 ```
+
+- C問題
+```
+n = gets.to_i
+s = n.times.map{gets.chomp}
+puts s[0..n - 1].uniq.size
+```
