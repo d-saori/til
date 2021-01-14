@@ -6,3 +6,15 @@ a, b = gets.split.map(&:to_i)
 
 puts (h - a) * (w - b)
 ```
+
+- B問題
+```
+n, m, c = gets.split.map(&:to_i)
+b = gets.split.map(&:to_i)
+cnt = 0
+n.times {
+  a = gets.split.map(&:to_i)
+  cnt += 1 if a.zip(b).map { |i, j| i * j}.sum + c > 0
+}
+puts cnt
+```
