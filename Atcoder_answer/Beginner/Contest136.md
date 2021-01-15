@@ -2,15 +2,9 @@
 
 ```
 a, b, c = gets.split.map(&:to_i)
-ml = c - (a - b)
-if ml <= 0
-  puts 0
-else
-  puts ml
-end
+puts b + c < a ? 0 : c - (a - b)
 
-もしくは
-
+# 別解
 a, b, c = gets.split.map(&:to_i)
 puts [c - a + b, 0].max
 ```
