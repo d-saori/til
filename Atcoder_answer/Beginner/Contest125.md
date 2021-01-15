@@ -2,7 +2,11 @@
 
 ```
 a, b, t = gets.split.map(&:to_i)
+c = (t + 0.5) / a
+puts c.floor * b
 
+# 別解
+a, b, t = gets.split.map(&:to_i)
 puts (t / a) * b
 ```
 
