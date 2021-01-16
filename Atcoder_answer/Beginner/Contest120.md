@@ -2,7 +2,10 @@
 
 ```
 a, b, c = gets.split.map(&:to_i)
+puts a * c < b ? c : b / a
 
+# 別解
+a, b, c = gets.split.map(&:to_i)
 puts [b / a, c].min
 ```
 
