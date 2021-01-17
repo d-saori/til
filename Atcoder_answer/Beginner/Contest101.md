@@ -1,6 +1,12 @@
 - A問題（https://atcoder.jp/contests/abc101/tasks/abc101_a）
 
 ```
+s = gets.chomp.chars
+p = s.count("+")
+m = s.count("-")
+puts (p - m)
+
+# 別解
 s = gets.chomp
 ans = 0
 4.times do |i|
