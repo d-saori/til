@@ -1,11 +1,7 @@
 - A問題（https://atcoder.jp/contests/abc071/tasks/abc071_a）
 ```
-x, a, b = gets.split.map(&:to_i)
-if (b - x).abs > (a - x).abs
-  puts "A"
-else
-  puts "B"
-end
+s = gets.chomp.chars
+puts s.count("1")
 ```
 
 - B問題（https://atcoder.jp/contests/abc071/tasks/abc071_b）
