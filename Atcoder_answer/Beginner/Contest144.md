@@ -24,4 +24,16 @@ ans = "No"
   }
 }
 puts ans
+
+# 別解
+n = gets.to_i
+ans = 0
+(1..9).each { |i|
+  (1..9).each { |j|
+    if i * j == n
+      ans += 1
+    end
+  }
+}
+puts ans >= 1 ? "Yes" : "No"
 ```
