@@ -8,9 +8,8 @@ puts (n - 1) * (m - 1)
 - B問題（https://atcoder.jp/contests/abc069/tasks/abc069_b）
 ```
 # 自分の解答
-s = gets.chomp.split("")
-a = s[1..-2].count
-puts "#{s[0]}#{a}#{s[-1]}"
+s = gets.chomp
+puts "#{s[0]}#{s[1..-2].size}#{s[-1]}"
 
 # 別解
 s = gets.chomp
