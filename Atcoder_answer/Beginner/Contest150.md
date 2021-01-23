@@ -15,8 +15,8 @@ s.scan("ABC") { |i| cnt << i }
 # 配列cntの長さ=一致した数
 puts cnt.size
 
-もしくは以下のようでもOK
+# 別解
 n = gets.to_i
-s = gets
-puts s.scan("ABC").size
+s = gets.chomp
+puts s.scan("ABC").count
 ```
