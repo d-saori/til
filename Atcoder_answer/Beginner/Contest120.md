@@ -17,4 +17,8 @@ ary = []
   ary << i if a & i == 0 && b % i == 0
 }
 puts ary[-k]
+
+# 別解
+a, b, k = gets.split.map(&:to_i)
+puts a.gcd(b).downto(1).select {|i| a % i == 0 && b % i == 0 }[k - 1]
 ```
