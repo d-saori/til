@@ -11,12 +11,19 @@ puts x + (y / 2)
 n = gets.to_i
 t, a = gets.split.map(&:to_i)
 h = gets.split.map(&:to_i)
+tem = []
+eria = []
+# 不動小数点型を用いないように気温を1000倍する
+n.times { |i|
+  tem << 1000 * t - h[i] * 6
+}
+tem.each { |j|
+  eria << (1000 * a - j).abs
+}
+min = eria.min
+puts eria.index(min) + 1
 
-# min_byメソッド:各要素を順番にブロックに渡して評価し、その評価結果を <=> で比較して、最小であった値に対応する元の要素、もしくは最小の n 要素を返す
-num = h.min_by { |i| ((t - i * 0.006) - a).abs }
-puts h.index(num) + 1
-
-もしくは
+# 別解
 n = gets.to_i
 t, a = gets.split.map(&:to_i)
 h = gets.split.map(&:to_i)
