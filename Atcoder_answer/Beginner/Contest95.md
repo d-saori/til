@@ -12,6 +12,17 @@ puts 700 + (s.count("o") * 100)　など
 - B問題（https://atcoder.jp/contests/abc095/tasks/abc095_b）
 ```
 n, x = gets.split.map(&:to_i)
+a = []
+n.times {
+  m = gets.to_i
+  a << m
+}
+min = a.min
+b = x - a.sum
+puts b == 0 ? n : b / min + n
+
+# 別解
+n, x = gets.split.map(&:to_i)
 a = n.times.map{gets.to_i}
 
 # この3行省略できる
