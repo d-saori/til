@@ -10,9 +10,8 @@ end
 
 - B問題（https://atcoder.jp/contests/abc072/tasks/abc072_b）
 ```
-s = gets.split("")
-even = s.each_slice(2).map(&:first)
-puts even.join
+s = gets.chomp.chars
+puts s.each_slice(2).to_a.map(&:first).join
 ```
 
 - C問題（https://atcoder.jp/contests/abc072/tasks/arc082_a）
