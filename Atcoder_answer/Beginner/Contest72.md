@@ -12,6 +12,10 @@ end
 ```
 s = gets.chomp.chars
 puts s.each_slice(2).to_a.map(&:first).join
+
+# 別解
+s = gets.chomp.chars
+puts s.select.with_index { |c, i| i.even? }.join
 ```
 
 - C問題（https://atcoder.jp/contests/abc072/tasks/arc082_a）
