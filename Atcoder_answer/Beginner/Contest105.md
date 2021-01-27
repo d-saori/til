@@ -18,4 +18,14 @@ ans = "No"
   }
 }
 puts ans
+
+# 別解
+n = gets.to_i
+sum = []
+(0..n/4).each { |i|
+  (0..n/7).each { |j|
+    sum << i * 4 + j * 7
+  }
+}
+puts sum.include?(n) ? "Yes" : "No"
 ```
