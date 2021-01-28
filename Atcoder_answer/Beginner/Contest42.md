@@ -19,6 +19,6 @@ end
 - B問題（https://atcoder.jp/contests/abc042/tasks/abc042_b）
 ```
 n, l = gets.split.map(&:to_i)
-s = n.times.map{gets.chomp.to_s}.sort
-puts s.join
+s = n.times.map { gets.chomp }.sort.join
+puts s
 ```
