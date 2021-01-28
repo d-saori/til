@@ -23,9 +23,8 @@ puts s.map(&:size).max.to_i
 
 - B問題（https://atcoder.jp/contests/abc175/tasks/abc175_b）
 ```
-n = gets.to_i
-ary = gets.split.map!(&:to_i).sort!
 # 三角形ができる条件：二辺の合計が一番長い辺より大きい
-
-puts ary.combination(3).count { |a, b, c| a < b && b < c && (a + b > c)}
+n = gets.to_i
+l = gets.split.map(&:to_i).sort
+p l.combination(3).count { |i, j, k| i < j && j < k && i + j > k }
 ```
