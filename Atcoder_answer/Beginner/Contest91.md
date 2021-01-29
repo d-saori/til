@@ -8,10 +8,10 @@ puts a + b >= c ? "Yes" : "No"
 ```
 # 青いカードに書かれた文字列それぞれについて、その文字列を言ったら何点貰えるかを計算し、その最大値を計算する
 n = gets.to_i
-blue = n.times.map{gets.chomp.to_s}
+blue = n.times.map { gets.chomp }
 m = gets.to_i
-red = m.times.map{gets.chomp.to_s}
+red = m.times.map { gets.chomp }
 
-ans = blue.uniq.map{ |i| blue.count(i) - red.count(i)}.max
+ans = blue.uniq.map { |i| blue.count(i) - red.count(i) }.max
 puts ans > 0 ? ans : 0
 ```
