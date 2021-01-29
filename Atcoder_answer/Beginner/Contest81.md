@@ -6,16 +6,14 @@ puts s.count("1")
 
 - B問題（https://atcoder.jp/contests/abc071/tasks/abc071_b）
 ```
-s = gets.chomp.split("").sort.uniq.join
-ans = "None"
-("a".."z").each { |num|
-  # unless文:条件式が偽になった場合(ブロック引数|num|が配列sに含まれていない時)に処理を実行
-  unless s.include?(num)
-    ans = num
-    break
-  end
-}
-puts ans
+n = gets.to_i
+a = gets.split.map(&:to_i)
+cnt = 0
+while a.all?(&:even?)
+  a = a.map { |i| i / 2 }
+  cnt += 1
+end
+puts cnt
 ```
 
 - C問題（https://atcoder.jp/contests/abc081/tasks/arc086_a）
