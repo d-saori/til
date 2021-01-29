@@ -30,4 +30,23 @@ if x_max - x_min > 0 && y_max - y_min > 0
 else
   puts 0
 end
+
+# 別解
+w, h, n = gets.split.map(&:to_i)
+# 塗りつぶしていない長方形が存在した場合の左下座標(0, 0)、右上座標(w, h)
+l, r, t, b = [0, w, h, 0]
+n.times {
+  x, y, a = gets.split.map(&:to_i)
+  case(a)
+  when 1
+    l = [l, x].max
+  when 2
+    r = [r, x].min
+  when 3
+    b = [b, y].max
+  when 4
+    t = [t, y].min
+  end
+}
+puts [r - l, 0].max * [t - b, 0].max
 ```
