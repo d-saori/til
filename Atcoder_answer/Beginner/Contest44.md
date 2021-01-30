@@ -7,3 +7,10 @@
 n, k, x, y = 4.times.map{gets.to_i}
 puts n > k ? (k * x) + (n - k) * y : n * x
 ```
+
+- B問題
+```
+w = gets.chomp.chars
+cnt = w.group_by(&:itself).values.map(&:size)
+puts cnt.all? { |i| i % 2 == 0 } ? "Yes" : "No"
+```
