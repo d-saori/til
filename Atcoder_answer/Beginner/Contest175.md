@@ -3,22 +3,25 @@
 
 
 ```
-S = gets.chomp
-
-if S == "RRR"
+s = gets.chomp
+if s == "RRR"
   puts 3
-elsif S == "SSS"
-  puts 0
-elsif S == "SSR" or S == "RRS"
+elsif s == "RRS" || s == "SRR"
   puts 2
-else
+elsif s == "RSS" || s == "RSR" || s == "SSR" || s == "SRS"
   puts 1
+else
+  puts 0
 end
 
-# その他の回答
+# 別解1
 # 区切り文字に文字列を指定すると、その文字列の一致する部分で分割する
 s = gets.chomp.split("S")
 puts s.map(&:size).max.to_i
+
+# 別解2
+s = gets.chomp
+puts s == "RSR" ? 1 : s.count("R")
 ```
 
 - B問題（https://atcoder.jp/contests/abc175/tasks/abc175_b）
