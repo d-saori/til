@@ -11,3 +11,17 @@ puts a.sum
 n = gets.chomp.to_i
 p (1..n).sum
 ```
+
+- B問題
+```
+s = gets.chomp.chars
+w = []
+s.each { |i|
+  if i == "B"
+    w.pop
+  else
+    w << i
+  end
+}
+puts w.join
+```
