@@ -17,7 +17,7 @@ end
 def row_aligned?
   result = ''
 
-  $board.each do |row|
+  $board.each { |row|
     o = 0
     x = 0
     (0..4).each { |i|
@@ -32,7 +32,7 @@ def row_aligned?
 
     result = aligned?(o, x)
     break if result != 'D'
-  end
+  }
 
   result
 end
