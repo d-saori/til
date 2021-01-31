@@ -53,5 +53,24 @@ puts "No"
 
 - C問題
 ```
+# それぞれの人がどちらの皿にボールを置くかの 2**K通り を全探索
+# それぞれの人がどちらの皿にボールを置くかを固定したとき、満たされる条件の個数は O(N+M+K)で求めることができる
+n, m = gets.split.map(&:to_i)
+ab = m.times.map { gets.split.map(&:to_i) }
+k = gets.to_i
+cd = m.times.map { gets.split.map(&:to_i) }
 
+max = 0
+(0..2**k-1).each { |i|
+  sara = {}
+  (0..k-1).each { |j|
+    sara[cd[j][(i >> j) & 1]] = true
+  }
+  sum = 0
+  ab.each { |p|
+    sum += 1 if sara[p[0]] && sara[p[1]]
+  }
+  ans = sum if sum > max
+}
+puts max
 ```
