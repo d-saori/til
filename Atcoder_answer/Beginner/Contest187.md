@@ -12,7 +12,8 @@ n = gets.to_i
 # x軸、y軸それぞれ全ての数を格納した配列を作成
 x, y = n.times.map { gets.split.map(&:to_i)}.transpose
 # x軸(x.combination(2))、y軸(y.combination(2))それぞれ全ての組み合わせを出力
-puts (0..n-1).to_a.combination(2).select { |i, j| (y[j] - y[i]).abs <= (x[j] - x[i]).abs}.count
+# (0..n-1).to_a = [*0..n-1]
+puts [*0..n-1].combination(2).select { |i, j| (y[j] - y[i]).abs <= (x[j] - x[i]).abs}.count
 ```
 
 - C問題（https://atcoder.jp/contests/abc187/tasks/abc187_c）
