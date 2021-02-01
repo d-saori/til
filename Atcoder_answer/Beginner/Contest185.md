@@ -29,16 +29,11 @@ else
       end
     end
   }
-  if s - g > 0
-    puts "Yes"
-  else
-    puts "No"
-  end
+  if s - g > 0 ? "Yes" : "No"
 end
 
-もしくは
+# 別解
 n, m, t = gets.chomp.split.map(&:to_i)
-
 prev = 0
 spend = 0 #バッテリー消費量
 battery = n #バッテリー総量
@@ -58,9 +53,5 @@ m.times { |i|
 }
 
 battery = battery - (t - b)
-if battery > 0
-  puts "Yes"
-else
-  puts "No"
-end
+puts battery > 0 ? "Yes" : "No"
 ```
