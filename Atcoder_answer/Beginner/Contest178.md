@@ -12,3 +12,9 @@ end
 x = gets.to_i
 puts x == 0 ? 1 : 0
 ```
+
+- B問題
+```
+a, b, c, d = gets.split.map(&:to_i)
+puts [a * c, a * d, b * c, b * d].max
+```
