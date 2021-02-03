@@ -21,3 +21,39 @@ end
 d, t, s = gets.split.map(&:to_f)
 puts d / s <= t ? "Yes" : "No"
 ```
+
+- B問題
+```
+s = gets.chomp
+t = gets.chomp
+min = t.size
+(0..s.size - t.size).each { |i|
+  cnt = 0
+  t.size.times { |j|
+    cnt += 1 if s[i + j] != t[j]
+  }
+  min = cnt if cnt < min
+}
+puts min
+
+# 別解
+s = gets.chomp.chars
+t = gets.chomp.chars
+puts (0..s.size - t.size).map { |i|
+  (0..t.size - 1).count { |j| t[j] != s[i + j] }
+}.min
+
+# 別解
+s = gets.chomp
+t = gets.chomp
+ans = 10**10
+while s.size >= t.size
+  cnt = 0
+  (0..t.size - 1).each { |i|
+    cnt += t[i] == s[i] ? 0 : 1
+  }
+  ans = [ans, cnt].min
+  s = s.chars.drop(1).join
+end
+puts ans
+```
