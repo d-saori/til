@@ -30,4 +30,14 @@ puts s == "RSR" ? 1 : s.count("R")
 n = gets.to_i
 l = gets.split.map(&:to_i).sort
 p l.combination(3).count { |i, j, k| i < j && j < k && i + j > k }
+
+# 別解
+n = gets.to_i
+l = gets.split.map(&:to_i).sort
+cnt = 0
+l.combination(3).each { |a, b, c|
+  # cnt += 1 if a < b + c && b < a + c && c < a + b && a != b && b != c && c != a
+  cnt += 1 if a < b && b < c && a + b > c
+}
+puts cnt
 ```
