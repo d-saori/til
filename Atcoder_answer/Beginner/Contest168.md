@@ -20,3 +20,10 @@ else
   puts "bon"
 end
 ```
+
+- B問題
+```
+k = gets.to_i
+s = gets.chomp
+puts s.size <= k ? s : "#{s[0..k-1]}..."
+```
