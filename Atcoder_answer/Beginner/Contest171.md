@@ -22,3 +22,10 @@ puts "A" if word.match?(/\A[A-Z]+\z/)
 word = gets
 puts word.match(/[A-Z]/) ? "A" : "a"
 ```
+
+- B問題
+```
+n, k = gets.split.map(&:to_i)
+p = gets.split.map(&:to_i).sort
+puts p[0..k-1].sum
+```
