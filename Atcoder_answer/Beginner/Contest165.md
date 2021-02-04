@@ -12,9 +12,23 @@ ans = "NG"
 }
 puts ans
 
+# 別解
+k = gets.to_i
+a, b = gets.split.map(&:to_i)
+cnt = 0
+(a..b).each { |i|
+  cnt += 1 if i % k == 0
+}
+puts cnt >= 1 ? "OK" : "NG"
+
 # each文を使わない書き方
 k = gets.to_i
 a, b = gets.split.map(&:to_i)
 # b以下内で最大のkの倍数がa以下ならOKとなる
 puts (b / k) * k >= a ? "OK" : "NG"
+```
+
+- B問題
+```
+
 ```
