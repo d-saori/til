@@ -15,3 +15,23 @@ x = gets.split.map(&:to_i)
 puts x.index(0) + 1
 ```
 
+- B問題
+```
+x, y = gets.split.map(&:to_i)
+cnt = 0
+(0..x).each { |i|
+  # 鶴がi匹なら亀はj = x - i匹
+  cnt += 1 if i * 2 + (x - i) * 4 == y
+}
+puts cnt >= 1 ? "Yes" : "No"
+
+# 別解
+x, y = gets.split.map(&:to_i)
+(0..x).each { |i|
+  # 鶴がi匹なら亀はj = x - i匹
+  if i * 2 + (x - i) * 4 == y
+    puts "Yes"
+  end
+}
+puts "No"
+```
