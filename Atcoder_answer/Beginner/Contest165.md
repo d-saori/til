@@ -30,5 +30,12 @@ puts (b / k) * k >= a ? "OK" : "NG"
 
 - B問題
 ```
-
+x = gets.to_i
+now = 100
+sum = 0
+while now < x
+  now = (now * 1.01).floor
+  sum += 1
+end
+puts sum
 ```
