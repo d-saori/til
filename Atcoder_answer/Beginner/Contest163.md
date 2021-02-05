@@ -8,3 +8,10 @@ puts 2 * r * 3.14
 r = gets.to_f
 puts 2 * r * Math::PI
 ```
+
+- B問題
+```
+n, m = gets.split.map(&:to_i)
+a = gets.split.map(&:to_i)
+puts n - a.sum >= 0 ? n - a.sum : -1
+```
