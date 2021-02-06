@@ -8,9 +8,20 @@
 n, m = gets.split.map(&:to_i) 
 puts n * (n - 1) / 2 + m * (m - 1) / 2
 
-# 別解答
+# 別解
 n, m = gets.split.map(&:to_i) 
 even = n.times.to_a
 odd = m.times.to_a
 puts even.combination(2).size + odd.combination(2).size
+
+# 別解
+n, m = gets.split.map(&:to_i)
+even = [*0..n-1].combination(2).to_a
+odd = [*0..m-1].combination(2).to_a
+puts even.size + odd.size
+```
+
+- B問題
+```
+
 ```
