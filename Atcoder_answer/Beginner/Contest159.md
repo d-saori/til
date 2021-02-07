@@ -23,5 +23,9 @@ puts even.size + odd.size
 
 - B問題
 ```
-
+# 回文(前から読んでも後ろから読んでも同じ)なので文字列は奇数長
+# 文字列を中央で分けた時、前と後ろそれぞれの文字列も回文
+s = gets.chomp
+n = s.size
+puts s == s.reverse && s[0, n/2] == s[0, n/2].reverse ? "Yes" : "No"
 ```
