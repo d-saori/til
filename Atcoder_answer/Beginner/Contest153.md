@@ -4,7 +4,7 @@
 h, a = gets.chomp.split.map(&:to_i)
 puts (h / a.to_f).ceil
 
-# 別解答
+# 別解
 h, a = gets.split.map(&:to_i)
 ans = 0
 while true
@@ -15,4 +15,13 @@ while true
     break
   end
 end
+
+# 別解
+h, a = gets.split.map(&:to_i)
+puts h % a == 0 ? h / a : h / a + 1
+```
+
+- B問題
+```
+
 ```
