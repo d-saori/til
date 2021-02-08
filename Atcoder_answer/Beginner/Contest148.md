@@ -21,14 +21,15 @@ n = gets.to_i
 s, t = gets.split
 puts s.chars.zip(t.chars).join
 
-もしくは
+# 別解
 n = gets.to_i
-s, t = gets.split
-ans = ""
+s, t = gets.chomp.split
+st = []
 n.times { |i|
-  ans += s[i] + t[i]
+  st << s[i]
+  st << t[i]
 }
-puts ans
+puts st.join
 ```
 
 - C問題（https://atcoder.jp/contests/abc148/tasks/abc148_c）
