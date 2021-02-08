@@ -10,3 +10,30 @@ puts t + s
 
 puts gets.split.reverse.join
 ```
+
+- B問題
+```
+a, b, k = gets.split.map(&:to_i)
+if a < k
+  b = [b - (k - a), 0].max
+  a = 0
+else
+  a -= [a, k].min
+end
+puts "#{a} #{b}"
+# puts [a, b].join(" ")
+
+# 別解
+a, b, k = gets.split.map(&:to_i)
+if a + b <= k
+  puts "0 0"
+  exit
+end
+
+if a >= k
+  puts "#{a - k} #{b}"
+  exit
+end
+
+puts "0 #{b - (k - a)}"
+```
