@@ -28,3 +28,25 @@ puts index == 0 ? 7 : 7 - index
 # 省略系
 puts 7 - ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].index(gets.chomp)
 ```
+
+- B問題
+```
+# 問題解く際の参考(https://qiita.com/ya-maruchoba/items/9e26c971fbaffb77c7d2)(http://www3.nit.ac.jp/~tamura/ex2/ascii.html)
+n = gets.to_i
+s = gets.chomp.chars
+num = []
+# アルファベットの大文字コード:65〜90
+s.each { |i|
+  c = i.ord - 65
+  d = (c + n) % 26
+  e = d + 65
+  num << e.chr
+}
+puts num.join
+
+# 別解
+n = gets.to_i
+s = gets.chomp.chars
+a = "A".ord
+puts s.map { |i| ((i.ord - a + n) % 26 + a).chr }.join
+```
