@@ -22,3 +22,19 @@ odd = []
 }
 puts odd.size / n.to_f
 ```
+
+- B問題
+```
+n, k = gets.split.map(&:to_i)
+h = gets.split.map(&:to_i)
+cnt = 0
+h.each { |i|
+  cnt += 1 if i >= k
+}
+puts cnt
+
+# 別解
+n, k = gets.split.map(&:to_i)
+h = gets.split.map(&:to_i)
+puts h.count { |i| i >= k }
+```
