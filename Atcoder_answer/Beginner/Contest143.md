@@ -14,3 +14,19 @@ end
 a, b = gets.split.map(&:to_i)
 puts [0, a - b * 2].max
 ```
+
+- B問題
+```
+n = gets.to_i
+d = gets.split.map(&:to_i)
+tako = []
+d.combination(2).map { |i, j|
+  tako << i * j
+}
+puts tako.sum
+
+# 別解
+n = gets.to_i
+d = gets.split.map(&:to_i)
+puts d.combination(2).map { |i, j| i * j }.sum
+```
