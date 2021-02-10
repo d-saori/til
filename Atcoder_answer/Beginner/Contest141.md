@@ -15,3 +15,11 @@ end
 s = %w(Sunny Cloudy Rainy)
 puts s[s.index(gets.chomp) - 2]
 ```
+
+- B問題
+```
+s = gets.chomp.chars
+odd = s.select.with_index { |_, i| i.even? }
+even = s.select.with_index { |_, i| i.odd? }
+puts odd.each.count { |i| "RUD".include?(i) } + even.each.count { |j| "LUD".include?(j) } == s.size ? "Yes" : "No"
+```
