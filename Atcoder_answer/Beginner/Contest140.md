@@ -16,4 +16,15 @@ n.times { |i|
   ans += c[a[i] - 1] if a[i] + 1 == a[i + 1]
 }
 puts ans
+
+# 別解
+n = gets.to_i
+a = gets.split.map(&:to_i)
+b = gets.split.map(&:to_i).sum
+c = gets.split.map(&:to_i)
+s = 0
+n.times { |i|
+  s += c[a[i - 1] - 1] if i > 0 && a[i] - a[i - 1] == 1
+}
+puts b + s
 ```
