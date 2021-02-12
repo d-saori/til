@@ -2,10 +2,16 @@
 
 ```
 s = gets.chomp
-
 if s.split("").uniq.length == 2
   puts "Yes"
 else
   puts "No"
 end
+```
+
+- B問題
+```
+n = gets.to_i
+p = gets.split.map(&:to_i)
+puts p.each_cons(3).count { |i| i[1] == i.sort[1] }
 ```
