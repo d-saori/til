@@ -3,13 +3,11 @@
 ```
 n, a, b = gets.split.map(&:to_i)
 r = n * a
-
 puts [r, b].min
 
 と回答しACだったが、変数rの下りはいらず
 
 n, a, b = gets.split.map(&:to_i)
-
 puts [n * a, b].min
 
 でOK
@@ -22,7 +20,7 @@ x = n.times.map { gets.split.map(&:to_i) }
 cnt = 0
 x.combination(2) { |i, j| 
   sum = 0
-  (0...d).each { |num|
+  (0..d-1).each { |num|
     sum += (i[num] - j[num]) ** 2
   }
   cnt += 1 if (sum ** 0.5).to_i == (sum ** 0.5)
