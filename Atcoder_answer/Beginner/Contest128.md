@@ -17,6 +17,19 @@ n.times { |i|
 rank.sort_by { |a| [a[0], -a[1]] }.each { |a|
   puts a[2]
 }
+
+# 別解
+n = gets.to_i
+rank = []
+n.times { |i|
+  s, p = gets.split
+  p = p.to_i
+  rank << [s, -p, i+1]
+}
+rank.sort!
+rank.each { |a, b, j|
+  puts j
+}
 ```
 
 - C問題（https://atcoder.jp/contests/abc128/tasks/abc128_c）
