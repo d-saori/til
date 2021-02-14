@@ -11,3 +11,19 @@ else
   puts b / 2
 end
 ```
+
+- B問題
+```
+r, d, x = gets.split.map(&:to_i)
+10.times {
+  x = r * x - d
+  puts x
+}
+
+# 別解
+r, d, x = gets.split.map(&:to_i)
+(1..10).each { |i|
+  puts r * x - d
+  x = r * x - d
+}
+```
