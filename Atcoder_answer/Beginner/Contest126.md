@@ -15,5 +15,18 @@ puts s.join
 
 - B問題
 ```
-
+s = gets.chomp
+a = s[0, 2].to_i
+b = s[2, 2].to_i
+yymm = 1 <= b && b <= 12
+mmyy = 1 <= a && a <= 12
+if yymm && mmyy
+  puts "AMBIGUOUS"
+elsif yymm
+  puts "YYMM"
+elsif mmyy
+  puts "MMYY"
+else
+  puts "NA"
+end
 ```
