@@ -15,6 +15,19 @@ puts (t / a) * b
 n = gets.to_i
 v = gets.split.map(&:to_i)
 c = gets.split.map(&:to_i)
+# i番目の宝石を選ぶ事によってX-YはVi-Ciだけ変化する。
+# コストよりも価格が高いような宝石のみを手に入れるのが最適
+t = []
+(0..n-1).each { |i|
+  s = v[i] - c[i]
+  t << s if s > 0
+}
+puts t.size == 0 ? 0 : t.sum
+
+# 別解
+n = gets.to_i
+v = gets.split.map(&:to_i)
+c = gets.split.map(&:to_i)
 
 # x - y > 0 = 宝石を選ぶ(加算される)
 ans = 0
