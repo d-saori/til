@@ -15,3 +15,14 @@ else
   puts "Yay!"
 end
 ```
+
+- B問題
+```
+a = 5.times.map { gets.to_i }.sort_by { |i| (i - 1) % 10 }
+puts a[0] + a[1..-1].map { |i| (i + 9) / 10 * 10 }.sum
+
+# 別解
+a = 5.times.map { gets.to_i }
+b = a.map { |i| (i % 10) == 0 ? 0 : 10 - (i % 10) }
+puts a.sum + b.sum - b.max
+```
