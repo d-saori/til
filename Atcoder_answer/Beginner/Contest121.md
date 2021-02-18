@@ -17,4 +17,14 @@ n.times {
   cnt += 1 if a.zip(b).map { |i, j| i * j}.sum + c > 0
 }
 puts cnt
+
+# 別解
+n, m, c = gets.split.map(&:to_i)
+b = gets.split.map(&:to_i)
+cnt = 0
+n.times {
+  a = gets.split.map(&:to_i)
+  cnt += 1 if m.times.map{ |i| a[i] * b[i] }.sum + c > 0
+}
+puts cnt
 ```
