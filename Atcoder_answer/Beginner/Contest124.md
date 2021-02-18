@@ -19,3 +19,10 @@ else
   puts r + r - 1
 end
 ```
+
+- B問題
+```
+n = gets.to_i
+h = gets.split.map(&:to_i)
+puts n.times.count { |i| h[0..i].max == h[i] }
+```
