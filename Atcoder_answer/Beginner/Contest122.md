@@ -19,4 +19,8 @@ end
 s = gets
 a = s.scan(/[ACGT]+/).map{ |i| i.size }
 puts a.size == 0 ? 0 : a.max
+
+# 別解
+s = gets.chomp
+puts s.scan(/[ACGT]*/).map(&:size).max
 ```
