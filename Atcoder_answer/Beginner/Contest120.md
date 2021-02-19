@@ -28,3 +28,13 @@ min = [a, b].min
 num = (1..min).select { |i| a % i == 0 && b % i == 0 }.sort.reverse
 puts num[k-1]
 ```
+
+- C問題
+```
+s = gets.chomp.chars
+# 文字列sに0も1も1つ以上残っている場合、どこかで0と1が隣り合っている
+# 0と1の個数を数え、それぞれc0,c1とすると、どのような順番で取り除いてもmin(c0,c1)回取り除く操作ができる
+s0 = s.count("0")
+s1 = s.count("1")
+puts s0 >= 1 && s1 >= 1 ? 2 * [s0, s1].min : 0
+```
