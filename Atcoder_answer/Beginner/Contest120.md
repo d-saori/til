@@ -21,4 +21,10 @@ puts ary[-k]
 # 別解
 a, b, k = gets.split.map(&:to_i)
 puts a.gcd(b).downto(1).select {|i| a % i == 0 && b % i == 0 }[k - 1]
+
+# 別解
+a, b, k = gets.split.map(&:to_i)
+min = [a, b].min
+num = (1..min).select { |i| a % i == 0 && b % i == 0 }.sort.reverse
+puts num[k-1]
 ```
