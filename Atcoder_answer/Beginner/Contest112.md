@@ -11,3 +11,19 @@ else n == 2
   puts a + b
 end
 ```
+
+- B問題
+```
+n, t = gets.split.map(&:to_i)
+s = []
+n.times {
+  c, ta = gets.split.map(&:to_i)
+  s << c if ta <= t
+}
+puts s.empty? ? "TLE" : s.min
+
+# 別解
+n, t = gets.split.map(&:to_i)
+a = n.times.map { gets.split.map(&:to_i) }.select { |c, ta| ta <= t}
+puts a.empty? ? "TLE" : a.min[0]
+```
