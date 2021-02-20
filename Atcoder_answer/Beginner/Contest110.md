@@ -11,3 +11,16 @@ puts ab.to_i + cc.to_i
 abc = gets.split.map(&:to_i).sort.reverse
 puts abc[0] * 10 + abc[1] + abc[2]
 ```
+
+- B問題
+```
+n, m, x, y = gets.split.map(&:to_i)
+xa = gets.split.map(&:to_i)
+ya = gets.split.map(&:to_i)
+z = [*x..y]
+cnt = 0
+z.each { |i|
+  cnt += 1 if x < i && i <= y && i > xa.max && i <= ya.min
+}
+puts cnt >= 1 ? "No War" : "War"
+```
