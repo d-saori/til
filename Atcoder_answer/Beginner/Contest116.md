@@ -2,6 +2,29 @@
 
 ```
 ab, bc, ca = gets.split.map(&:to_i)
-
 puts ab * bc / 2
+```
+
+- B問題
+```
+s = gets.to_i
+# 初めて同じ数が出てくるのは何番目か求める
+t = []
+loop do
+  break if t.include?(s)
+  t << s
+  s.odd? ? s = 3 * s + 1 : s = s / 2
+end
+puts t.size + 1
+
+# 別解
+s = gets.to_i
+# 初めて同じ数が出てくるのは何番目か求める
+t = [s]
+while
+  s = s.odd? ? 3 * s + 1 : s / 2
+  break if t.include?(s)
+  t << s
+end
+puts t.size + 1
 ```
