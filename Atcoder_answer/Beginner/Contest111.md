@@ -11,12 +11,12 @@ n = gets.chomp
 puts n.tr("19", "91")
 ```
 
-- B問題（）
+- B問題
 ```
 n = gets.to_i
 puts ((n - 1) / 111 + 1) * 111
 
-もしくは
+# 別解
 n = gets.to_i
 (n..999).each { |n|
   a = n.to_s.chars
@@ -25,4 +25,14 @@ n = gets.to_i
     exit
   end
 }
+
+# 別解
+n = gets.chomp.chars
+if n.uniq.size == 1
+  puts n.join
+elsif n.join.to_i >= n[0].to_i * 111
+  puts (n[0].to_i + 1) * 111
+else
+  puts n[0].to_i * 111
+end
 ```
