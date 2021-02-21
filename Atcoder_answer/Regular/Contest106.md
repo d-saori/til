@@ -2,15 +2,17 @@
 
 ```
 n = gets.to_i
-# 3 ** x <= 10 ** 18 →30 ** 37
-(1..37).each do |a|
-  (1..37).each do |b|
-    if 3**a + 5**b == n
-      puts "#{a} #{b}"
+# 3 ** 38 > 10 ** 18
+# 5 ** 26 > 10 ** 18
+cnt = 0
+(0..38).each { |a|
+  (0..26).each { |b|
+    if 3 ** a + 5 ** b == n
+      cnt += 1
+      puts [a, b].join(" ")
       exit
     end
-  end
-end
-
-puts "-1"
+  }
+}
+puts -1
 ```
