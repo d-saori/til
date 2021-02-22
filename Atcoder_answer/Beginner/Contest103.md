@@ -13,3 +13,16 @@ puts a[2] - a[0]
 a = gets.split.map(&:to_i)
 puts a.max - a.min
 ```
+
+- B問題
+```
+s, t = 2.times.map { gets.chomp.chars }
+t.size.times {
+  t = t.rotate(-1)
+  if t == s
+    puts "Yes"
+    exit
+  end
+}
+puts "No"
+```
