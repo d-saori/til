@@ -9,3 +9,17 @@ else
   puts "No"
 end
 ```
+
+- B問題
+```
+x = gets.to_i
+ans = 1
+(1..x).each { |i|
+  (2..10).each { |j|
+    k = i ** j
+    break if k > x
+    ans = k if ans < k
+  }
+}
+puts ans
+```
