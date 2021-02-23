@@ -11,10 +11,14 @@ puts gets[0] + gets[1] + gets[2]
 
 - B問題（https://atcoder.jp/contests/abc090/tasks/abc090_b）
 ```
-a, b = gets.split.map(&:to_i)
+a, b = gets.chomp.split
 cnt = 0
-(a..b).each { |i|
-  cnt += 1 if i.to_s == i.to_s.reverse
+(a..b).each { |i| 
+  cnt += 1 if i == i.chars.reverse.join
 }
 puts cnt
+
+# 別解
+a, b = gets.chomp.split
+puts (a..b).select { |i| i == i.reverse }.count
 ```
