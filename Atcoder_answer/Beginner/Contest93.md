@@ -8,9 +8,8 @@ puts s == "abc" ? "Yes" : "No"
 ```
 # 自分の提出コード（不正解）
 a, b, k = gets.split.map(&:to_i)
-ary = []
-(a..b).each { |i| ary << i}
-puts k > ary.size ? ary : (ary[0..k] + ary[-k..-1]).uniq
+t = [*a..b]
+puts 2 * k < t.size ? [t[0..k-1], t[-2..-1]] : t
 
 # 正解
 a, b, k = gets.split.map(&:to_i)
