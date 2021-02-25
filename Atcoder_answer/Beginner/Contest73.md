@@ -25,15 +25,15 @@ guests.each { |l, r|
 }
 puts sum
 
-もしくは
+# 別解
 n = gets.to_i
-l, r = gets.split.map(&:to_i)
-sum = 0
+# l, r = n.times.map { gets.split.map(&:to_i) }
+ary = []
 n.times {
   l, r = gets.split.map(&:to_i)
-  sum += r - l + 1
+  ary << [*l..r]
 }
-puts sum
+p ary.flatten.uniq.size
 ```
 
 - C問題（https://atcoder.jp/contests/abc073/tasks/abc073_c）
