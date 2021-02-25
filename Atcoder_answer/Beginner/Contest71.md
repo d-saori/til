@@ -20,4 +20,13 @@ ans = "None"
   end
 }
 puts ans
+
+# 別解
+s = gets.chomp.chars.uniq.sort
+("a".."z").each { |i|
+  next if s.include?(i)
+    puts i
+    exit
+}
+puts "None"
 ```
