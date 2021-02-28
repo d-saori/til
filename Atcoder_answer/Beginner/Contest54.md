@@ -22,3 +22,15 @@ else
   puts "Bob"
 end
 ```
+
+- B問題
+```
+n, m = gets.split.map(&:to_i)
+a = n.times.map { gets.chomp }
+b = m.times.map { gets.chomp }
+cnt = 0
+b.each_with_index { |b, i|
+  cnt += 1 if a[i].include?(b)
+}
+puts cnt == m ? "Yes" : "No"
+```
