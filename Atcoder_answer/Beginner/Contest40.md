@@ -10,7 +10,7 @@ n = gets.to_i
 ans = n
 d = 1
 while d * d <= n
-  h, w = n.divmod(d)
+  h, w = n.divmod(d) # => h:商 w:余り
   ans = [ans, h - d + w].min
   d += 1
 end
