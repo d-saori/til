@@ -20,3 +20,10 @@ n.times {
 }
 puts cnt
 ```
+
+- B問題
+```
+n = gets.to_i
+a = n.times.map { gets.to_i }
+puts n - a.uniq.count
+```
