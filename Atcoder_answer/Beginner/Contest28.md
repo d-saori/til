@@ -11,3 +11,10 @@ else
   puts "Perfect"
 end
 ```
+
+- B問題
+```
+s = gets.chomp
+ans = ("A".."F").map { |i| s.count(i) }
+puts ans.join(" ")
+```
