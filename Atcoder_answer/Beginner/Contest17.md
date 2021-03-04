@@ -25,3 +25,9 @@ sum = 0
 }
 puts sum
 ```
+
+- B問題
+```
+x = gets.chomp.gsub(/ch/, "").gsub(/o/, "").gsub(/k/, "").gsub(/u/, "")
+puts x.empty? ? "YES" : "NO"
+```
