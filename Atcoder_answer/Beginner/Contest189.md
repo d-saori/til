@@ -37,3 +37,39 @@ sum = 0
 }
 puts -1
 ```
+
+- C問題
+```
+# l(区間の最初)を固定しrを伸ばして全探索
+n = gets.to_i
+a = gets.split.map(&:to_i)
+ans = 0
+(0..n-1).each { |l|
+  min = a[l]
+  (l..n-1).each { |r|
+    min = [min, a[r]].min
+    c = (r - l + 1) * min
+    ans = [ans, c].max
+    break if min * (n - l) <= ans
+  }
+}
+puts ans
+
+# 別解
+n = gets.to_i
+a = gets.split.map(&:to_i)
+ans = a.max
+i = 0
+while i < n - 1
+  min = a[i]
+  j = i + 1
+  while j < n
+    break if min * n <= ans
+    min = a[j] if min > a[j]
+    ans = [ans, (j - i + 1) * min].max
+    j += 1
+  end
+  i += 1
+end
+puts ans
+```
