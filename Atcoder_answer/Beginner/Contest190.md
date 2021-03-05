@@ -53,6 +53,26 @@ puts "No"
 
 - C問題
 ```
+n, m = gets.split.map(&:to_i)
+ab = m.times.map { gets.split.map(&:to_i) }
+k = gets.to_i
+cd = k.times.map { gets.split.map(&:to_i) }
+ans = 0
+[0, 1].repeated_permutation(k) { |bits|
+  selected = []
+  cd.zip(bits) { |i, bit|
+    selected << i[bit]
+  }
+  selected = selected.uniq.sort
+  cnt = 0
+  ab.each { |a, b|
+    cnt += 1 if (selected.include?(a) && selected.include?(b))
+  }
+  ans = [ans, cnt].max
+}
+puts ans
+
+# 別解
 # それぞれの人がどちらの皿にボールを置くかの 2**K通り を全探索
 # それぞれの人がどちらの皿にボールを置くかを固定したとき、満たされる条件の個数は O(N+M+K)で求めることができる
 n, m = gets.split.map(&:to_i)
@@ -73,30 +93,4 @@ max = 0
   ans = sum if sum > max
 }
 puts max
-
-# 別解
-n, m = gets.split.map(&:to_i)
-ab = []
-m.times {
-  ab << gets.split.map(&:to_i)
-}
-k = gets.to_i
-cd = []
-k.times {
-  cd << gets.split.map(&:to_i)
-}
-ans = 0
-[0, 1].repeated_permutation(k) do |bits|
-  selected = []
-  cd.zip(bits) do |ckdk, bit|
-    selected << ckdk[bit]
-  end
-  selected = selected.uniq.sort
-  cnt = 0
-  ab.each { |a, b|
-    cnt += 1 if (selected.include?(a) && selected.include?(b))
-  }
-  ans = [ans, cnt].max
-end
-puts ans
 ```
