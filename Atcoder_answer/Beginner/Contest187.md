@@ -10,8 +10,12 @@ puts [a_sum, b_sum].max
 ```
 n = gets.to_i
 xy = n.times.map { gets.split.map(&:to_i) }
-# 2点(x1, y1),(x2, y2)を通る直線の傾きは y1-y2 / x1-x2
-puts xy.combination(2).count { |(x1, y1), (x2, y2)| (y1 - y2).abs <= (x1 - x2).abs }
+cnt = 0
+xy.combination(2).each { |i|
+  t = (i[1][1] - i[0][1]).to_f / (i[1][0] - i[0][0])
+  cnt += 1 if -1.0 <= t && t <= 1.0
+}
+puts cnt
 
 # 別解
 n = gets.to_i
@@ -24,12 +28,8 @@ puts [*0..n-1].combination(2).select { |i, j| (y[j] - y[i]).abs <= (x[j] - x[i])
 # 別解
 n = gets.to_i
 xy = n.times.map { gets.split.map(&:to_i) }
-cnt = 0
-xy.combination(2).each { |i|
-  t = (i[1][1] - i[0][1]).to_f / (i[1][0] - i[0][0])
-  cnt += 1 if -1.0 <= t && t <= 1.0
-}
-puts cnt
+# 2点(x1, y1),(x2, y2)を通る直線の傾きは y1-y2 / x1-x2
+puts xy.combination(2).count { |(x1, y1), (x2, y2)| (y1 - y2).abs <= (x1 - x2).abs }
 ```
 
 - C問題（https://atcoder.jp/contests/abc187/tasks/abc187_c）
