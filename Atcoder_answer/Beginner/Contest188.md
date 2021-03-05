@@ -22,9 +22,16 @@ s = a.size / 2
 # a[start, length]
 x = a[0, s]
 y = a[s, s]
-
 mx = x.max
 my = y.max
 sf = [mx, my].min
 puts a.index(sf) + 1
+
+# 別解
+n = gets.to_i
+a = gets.split.map(&:to_i)
+one = a[0..a.size/2 - 1]
+two = a[a.size/2..-1]
+s = [one.max, two.max].min
+puts a.index(s) + 1
 ```
