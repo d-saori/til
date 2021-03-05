@@ -35,9 +35,23 @@ puts xy.combination(2).count { |(x1, y1), (x2, y2)| (y1 - y2).abs <= (x1 - x2).a
 - C問題（https://atcoder.jp/contests/abc187/tasks/abc187_c）
 ```
 n = gets.to_i
+m = []
+t = []
+n.times {
+  s = gets.chomp
+  if s.include?("!")
+    m << s.delete("!")
+  else
+    t << s
+  end
+}
+x = m & t
+puts x.empty? ? "satisfiable" : x[0]
+
+# 別解
+n = gets.to_i
 s = n.times.map{gets.chomp}
 s.uniq!
-
 ans = s.group_by { |s| s.delete("!") }.select { |k, v| v.size > 1 }
 puts ans.empty? ? "satisfiable" : ans.first[0]
 ```
