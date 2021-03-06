@@ -39,3 +39,33 @@ h, w = gets.split.map(&:to_i)
 a = h.times.map{gets.split.map(&:to_i)}.flatten
 puts a.sum - a.min * h * w
 ```
+
+- C問題
+```
+n = gets.to_i
+cnt = 0
+(1..n).each { |i|
+  z = i.to_s(10)
+  h = i.to_s(8)
+  cnt += 1 if z.include?("7") || h.include?("7")
+}
+puts [*1..n].size - cnt
+
+# 別解
+n = gets.to_i
+cnt = 0
+(1..n).each { |i|
+  cnt += 1 unless i.to_s.include?("7") || i.to_s(8).include?("7")
+}
+puts cnt
+
+# 別解
+n = gets.to_i
+cnt = 0
+i = 1
+while i <= n
+  cnt += 1 unless i.to_s.include?("7") || i.to_s(8).include?("7")
+  i += 1
+end
+puts cnt
+```
