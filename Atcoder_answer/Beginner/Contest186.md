@@ -69,3 +69,27 @@ while i <= n
 end
 puts cnt
 ```
+
+- D問題
+```
+n = gets.to_i
+# sortにすると条件 i < j < nを満たして必ず Aj - Ai となり絶対値が外れる
+a = gets.split.map(&:to_i).sort
+ans = 0
+accum = 0
+# 条件 n <= 2000 のため combination(2) などでi,jどちらも探索するとTLEになる
+n.times { |i|
+  ans += (a[i] * i - accum)
+  accum += a[i]
+}
+puts ans
+
+# 別解
+n = gets.to_i
+a = gets.split.map(&:to_i).sort.reverse
+ans = 0
+n.times { |i|
+  ans += a[i] * (n - 1 - 2 * i)
+}
+puts ans
+```
