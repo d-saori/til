@@ -46,3 +46,9 @@ m.times {
 }
 puts battery - t + prev <= 0 ? "No" : ans
 ```
+
+- C問題
+```
+l = gets.to_i
+puts [*1..l-1].combination(11).size
+```
