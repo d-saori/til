@@ -6,11 +6,10 @@ puts a.min
 
 - B問題（https://atcoder.jp/contests/abc185/tasks/abc185_a）
 ```
-n, m, t = gets.chomp.split.map(&:to_i)
-ab = m.times.map{gets.split.map(&:to_i)} # [[a1, b1], [a2, b2]]...
+n, m, t = gets.split.map(&:to_i)
+ab = m.times.map{gets.split.map(&:to_i)}
 s = n - ab[0][0] # 1件目のカフェ到着時の残りバッテリー量
 g = t - ab[-1][1] # 最後に滞在したカフェを出発してから帰宅までに消費したバッテリー量
-
 if s <= 0
   puts "No"
 else
@@ -33,25 +32,17 @@ else
 end
 
 # 別解
-n, m, t = gets.chomp.split.map(&:to_i)
+n, m, t = gets.split.map(&:to_i)
+battery = n  #バッテリー総量
 prev = 0
-spend = 0 #バッテリー消費量
-battery = n #バッテリー総量
-a, b = 0
-
-m.times { |i|
-  a, b = gets.chomp.split(" ").map(&:to_i)
+ans = "Yes"
+m.times {
+  a, b = gets.split.map(&:to_i)
   charge = b - a
-  spend = a - prev # 1件目のカフェまでに消費したバッテリー量
-  # まずここまでの消費を計算
-  battery = battery - spend
-  break if battery <= 0
-  # カフェで充電した分を残バッテリー量に足す
-  battery = battery + charge
-  battery = n if battery > n
+  battery -= a - prev
+  break ans = "No" if battery <= 0
+  battery = [battery + b - a, n].min
   prev = b
 }
-
-battery = battery - (t - b)
-puts battery > 0 ? "Yes" : "No"
+puts battery - t + prev <= 0 ? "No" : ans
 ```
