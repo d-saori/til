@@ -42,3 +42,18 @@ puts m.sum
 puts (y.sum) ** 0.5
 puts m.max
 ```
+
+- C問題
+```
+n = gets.to_i
+ans = []
+i = 1
+while i * i <= n
+  if n % i == 0
+    ans << i
+    ans << n / i
+  end
+  i += 1
+end
+puts ans.uniq.sort
+```
