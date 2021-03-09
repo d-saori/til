@@ -27,9 +27,9 @@ d = n.times.map { gets.split.map(&:to_i)}
 cnt = 0
 d.each { |i, j|
   if i == j
-    z << cnt += 1
+    cnt += 1
   else
-    z << cnt = 0
+    cnt = 0
   end
   if cnt == 3
     puts "Yes"
