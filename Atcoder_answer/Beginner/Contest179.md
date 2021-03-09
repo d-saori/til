@@ -23,9 +23,9 @@ puts s[-1] == "s" ? s + "es" : s + "s"
 - B問題
 ```
 n = gets.to_i
-d = n.times.map { gets.split.map(&:to_i)}
+ab = n.times.map { gets.split.map(&:to_i)}
 cnt = 0
-d.each { |i, j|
+ab.each { |i, j|
   if i == j
     cnt += 1
   else
