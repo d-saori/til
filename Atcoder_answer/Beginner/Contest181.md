@@ -43,3 +43,25 @@ n.times {
 }
 puts sum
 ```
+
+- C問題
+```
+n = gets.to_i
+xy = n.times.map { gets.split.map(&:to_i) }
+# 3点A(0, 0),B(x1, y1),C(x2, y2)が同一直線上にある条件:ABとACの傾きが等しい
+# y1 / x1 = y2 / x2 :両辺にx1x2をかける: x2y1 = x1y2
+xy.combination(3) { |a, b, c|
+  x = b[0] - a[0]
+  y = b[1] - a[1]
+  if x == 0
+    if c[0] == b[0]
+      puts "Yes"
+      exit
+    end
+  elsif y * (c[0] - a[0]) + x * a[1] == x * c[1]
+    puts "Yes"
+    exit
+  end
+}
+puts "No"
+```
