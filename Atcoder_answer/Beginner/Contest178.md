@@ -15,6 +15,18 @@ puts x == 0 ? 1 : 0
 
 - B問題
 ```
+abcd = gets.split.map(&:to_i)
+x = abcd[0..1]
+y = abcd[2..3]
+ary = []
+x.each { |i|
+  y.each { |j|
+    ary << i * j
+  }
+}
+puts ary.max
+
+# 別解
 a, b, c, d = gets.split.map(&:to_i)
 puts [a * c, a * d, b * c, b * d].max
 ```
