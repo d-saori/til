@@ -19,3 +19,24 @@ puts m.sum % 9 == 0 ? "Yes" : "No"
 n = gets.to_i
 puts n % 9 == 0 ? "Yes" : "No"
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+# 自分より背の高い人が前にいる時、自分は踏み台を使って背を高くする
+# 自分の背が高くなる事により、後ろの人が「背が低いままで良い」などの得はしない
+# 逆に後ろの人が踏み台を使わないといけなくなる事が起こりうる
+max = 0
+sum = 0
+a.each { |i|
+  if i < max
+    sum += max - i
+    i = max
+  end
+  if i > max
+    max = i
+  end
+}
+puts sum
+```
