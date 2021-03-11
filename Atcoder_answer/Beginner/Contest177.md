@@ -55,3 +55,17 @@ s.each_cons(t.size) { |i|
 }
 puts min
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i).sort
+MOD = 10 ** 9 + 7
+s = 0
+r = 0
+a.each { |i|
+  r = (r + s * i) % MOD
+  s = (s + i) % MOD
+}
+puts r
+```
