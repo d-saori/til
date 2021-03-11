@@ -30,3 +30,10 @@ puts ary.max
 a, b, c, d = gets.split.map(&:to_i)
 puts [a * c, a * d, b * c, b * d].max
 ```
+
+- C問題
+```
+n = gets.to_i
+MOD = 10 ** 9 + 7
+puts (10 ** n - 9 ** n - 9 ** n + 8 ** n) % MOD
+```
