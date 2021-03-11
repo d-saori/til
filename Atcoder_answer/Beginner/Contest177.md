@@ -44,16 +44,14 @@ puts (0..s.size - t.size).map { |i|
 }.min
 
 # 別解
-s = gets.chomp
-t = gets.chomp
-ans = 10**10
-while s.size >= t.size
+ss, t = 2.times.map { gets.chomp.chars }
+min = s.size
+s.each_cons(t.size) { |i|
   cnt = 0
-  (0..t.size - 1).each { |i|
-    cnt += t[i] == s[i] ? 0 : 1
+  i.each_with_index { |j, id|
+    cnt += 1 if j != t[id]
   }
-  ans = [ans, cnt].min
-  s = s.chars.drop(1).join
-end
-puts ans
+  min = [min, cnt].min
+}
+puts min
 ```
