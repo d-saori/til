@@ -41,3 +41,13 @@ l.combination(3).each { |a, b, c|
 }
 puts cnt
 ```
+
+- C問題
+```
+x, k, d = gets.split.map(&:to_i)
+x = x.abs
+move = [k, x / d].min
+k -= move
+x -= move * d
+puts k.even? ? x : (x - d).abs
+```
