@@ -35,3 +35,11 @@ x, y = gets.split.map(&:to_i)
 }
 puts "No"
 ```
+
+- C問題
+```
+x, n = gets.split.map(&:to_i)
+p = gets.split.map(&:to_i)
+ary = [*0..101] - p
+puts ary.min_by { |i| (i - x).abs }
+```
