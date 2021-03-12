@@ -9,7 +9,7 @@ puts A * B
 ```
 # そのまま探索するとTLEになってしまうので工夫する
 n = gets.to_i
-a = gets.split.map(&:to_i).sort
+a = gets.split.map(&:to_i).sort.reverse
 sum = 1
 a.each { |i|
   sum *= i
