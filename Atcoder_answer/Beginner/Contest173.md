@@ -35,3 +35,23 @@ s = n.times.map { gets.chomp }
 m = ["AC", "WA", "TLE", "RE"]
 puts m.map { |i| "#{i} x #{s.count(i)}" }
 ```
+
+- C問題
+```
+h, w, k = gets.split.map(&:to_i)
+c = h.times.map { gets.chomp.chars }
+ans = 0
+[0, 1].repeated_permutation(h).each { |i|
+  [0, 1].repeated_permutation(w).each { |j|
+    cnt = 0
+    i.each_with_index { |a, b|
+      j.each_with_index { |d, e|
+        next if a == 0 || d == 0
+        cnt += 1 if c[b][e] == "#"
+      }
+    }
+    ans += 1 if cnt == k
+  }
+}
+puts ans
+```
