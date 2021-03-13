@@ -37,9 +37,3 @@ else
   puts sum
 end
 ```
-
-- C問題
-```
-a, b, h, m = gets.split.map(&:to_f)
-puts (a ** 2 + b ** 2 - 2 * a * b * Math.cos(2 * Math::PI * (h / 12 + m / 12 / 60 - m / 60))) ** 0.5
-```
