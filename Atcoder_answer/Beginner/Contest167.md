@@ -34,3 +34,16 @@ else
   puts a - (k - (a + b)) #=> # cのカードには-1が書いてある:(k - (a + b)) = cの枚数なのでa - c
 end
 ```
+
+- C問題
+```
+n, m, x = gets.split.map(&:to_i)
+ca = n.times.map { gets.split.map(&:to_i) }
+ans = []
+te = [*1..n].map { |i| ca.combination(i).to_a }.flatten(1)
+te.each { |i|
+  a = i.to_a.transpose.map(&:sum)
+  ans << a[0] if a[1..m].all? { |p| p >= x }
+}
+puts ans.size.zero? ? -1 : ans.min
+```
