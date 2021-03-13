@@ -20,4 +20,17 @@ elsif a + b >= k
 else
   puts a - (k - a - b)
 end
+
+# 別解
+a, b, c, k = gets.split.map(&:to_i)
+# 1が書いてあるaのカードは全部選ぶ
+# 次に0が書いてあるbのカードを選ぶ
+# 最後に-1が書いてあるcのカードを選ぶ
+if a >= k
+  puts k
+elsif a + b >= k
+  puts a
+else
+  puts a - (k - (a + b)) #=> # cのカードには-1が書いてある:(k - (a + b)) = cの枚数なのでa - c
+end
 ```
