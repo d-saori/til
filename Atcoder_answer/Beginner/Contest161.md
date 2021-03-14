@@ -13,6 +13,16 @@ puts [z, x, y].join(" ")
 ```
 n, m = gets.split.map(&:to_i)
 a = gets.split.map(&:to_i).sort.reverse
+s = a.sum / (4 * m).to_f
+cnt = 0
+a[0..m-1].each { |i|
+  cnt += 1 if i >= s
+}
+puts cnt >= m ? "Yes" : "No"
+
+# 別解
+n, m = gets.split.map(&:to_i)
+a = gets.split.map(&:to_i).sort.reverse
 poll = a.sum
 puts m <= a.count { |i| i >= poll / (4.0 * m) } ? "Yes" : "No"
 
