@@ -39,3 +39,39 @@ while now < x
 end
 puts sum
 ```
+
+- C問題
+```
+n, m, q = gets.split.map(&:to_i)
+abcd = q.times.map { gets.split.map(&:to_i) }
+max = 0
+[*1..n+m-2].combination(n-1) { |per|
+  mi = [1]
+  (n-1).times { |i|
+    mi << per[i] - i
+  }
+  cnt = 0
+  abcd.each { |a, b, c, d|
+    cnt += 1 if mi[b-1] - mi[a-1] == c
+  }
+  max = cnt if cnt > max
+}
+puts max
+
+# 別解
+n, m, q = gets.split.map(&:to_i)
+nums = q.times.map { gets.split.map(&:to_i) }
+options = [*1..m]
+ans = []
+options.repeated_combination(n).each { |combi|
+  ary = combi.to_a
+  tmp = 0
+  nums.each { |a, b, c, d|
+    if ary[b - 1] - ary[a - 1] == c
+      tmp += d
+    end
+  }
+  ans << tmp
+}
+puts ans.max
+```
