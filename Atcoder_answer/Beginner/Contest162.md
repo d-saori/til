@@ -25,3 +25,28 @@ sum = 0
 }
 p sum
 ```
+
+- C問題
+```
+k = gets.to_i
+ans = 0
+(1..k).to_a.repeated_permutation(3) { |a, b, c|
+  ans += a.gcd(b).gcd(c)
+}
+puts ans
+
+# 別解
+k = gets.to_i
+ans = 0
+(1..k).each { |a|
+  (1..k).each { |b|
+    x = a.gcd(b)
+    if x == 1
+      ans += k
+    else
+      (1..k).each { |c| ans += x.gcd(c) }
+    end
+  }
+}
+puts ans
+```
