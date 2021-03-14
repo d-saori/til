@@ -16,3 +16,21 @@ k.times {
 }
 puts n - a.flatten.uniq.size
 ```
+
+- C問題
+```
+n, m = gets.split.map(&:to_i)
+h = gets.split.map(&:to_i)
+ans = [] #=> 良くない展望台を入れる
+m.times {
+  a, b = gets.split.map(&:to_i)
+  if h[a-1] == h[b-1]
+    ans.push(a, b)
+  elsif h[a-1] > h[b-1]
+    ans << b
+  else
+    ans << a
+  end
+}
+puts n - ans.uniq.size
+```
