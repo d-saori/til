@@ -15,3 +15,15 @@ n, m = gets.split.map(&:to_i)
 a = gets.split.map(&:to_i)
 puts n - a.sum >= 0 ? n - a.sum : -1
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+ans = [0] * (n + 1)
+a.each { |i|
+  ans[i] += 1
+}
+ans.shift
+puts ans
+```
