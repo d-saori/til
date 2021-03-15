@@ -26,6 +26,12 @@ puts even.size + odd.size
 # 回文(前から読んでも後ろから読んでも同じ)なので文字列は奇数長
 # 文字列を中央で分けた時、前と後ろそれぞれの文字列も回文
 s = gets.chomp
-n = s.size
-puts s == s.reverse && s[0, n/2] == s[0, n/2].reverse ? "Yes" : "No"
+n = s.size / 2
+puts s == s.reverse && s[0, n] == s[0, n].reverse ? "Yes" : "No"
+```
+
+- C問題
+```
+l = gets.to_f
+puts (l / 3.0) ** 3
 ```
