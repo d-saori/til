@@ -14,4 +14,14 @@ n, a, b = gets.split.map(&:to_i)
 # nをa+bで割った余りをrとすると、min(r, a)だけ含まれる
 puts n / (a + b) * a + [n % (a + b), a].min
 
+# 別解
+n, a, b = gets.split.map(&:to_i)
+ans = (n / (a + b)) * a
+t = n % (a + b)
+if t >= a
+  ans += a
+else
+  ans += t
+end
+puts ans
 ```
