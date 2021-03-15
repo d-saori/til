@@ -32,3 +32,13 @@ a = gets.split.map(&:to_i).sort.reverse
 poll = a.sum / (4.0 * m)
 puts a[m - 1] >= poll ? "Yes" : "No"
 ```
+
+- C問題
+```
+n, k = gets.split.map(&:to_i)
+# xがk以上の時、操作を行うことでx-kとなる
+# nからn/k回操作を行うことで、整数はnをkで割った余りとなる
+# nをkで割った余りをtとし、tに操作を行うとk-tとなる
+# k-tに操作を行うとtに戻るだけなので、k以下の値として取りうるものはtとk-tの小さい方
+puts [n % k, (k - n % k).abs].min
+```
