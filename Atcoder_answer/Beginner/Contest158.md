@@ -25,3 +25,16 @@ else
 end
 puts ans
 ```
+
+- C問題
+```
+a, b = gets.split.map(&:to_i)
+# 1 <= a <= b 100 の条件から最大でも考える必要のある金額は1009円
+(1..1009).each { |i|
+  if (i * 0.08).floor == a && (i * 0.1).floor == b
+    puts i
+    exit
+  end
+}
+puts -1
+```
