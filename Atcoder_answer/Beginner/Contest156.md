@@ -23,7 +23,21 @@ puts n.to_s(k).size
 
 - C問題
 ```
-# 解答例
+n = gets.to_i
+x = gets.split.map(&:to_i)
+ans = []
+s = []
+(x.min..x.max).each { |i|
+  x.each { |j|
+    ans << (i - j) ** 2
+  }
+}
+ans.each_slice(n).each { |k|
+  s << k.sum
+}
+puts s.min
+
+# 別解
 n = gets.to_i
 x = gets.split.map(&:to_i)
 puts (x.min..x.max).map { |i|
