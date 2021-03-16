@@ -28,3 +28,21 @@ n.times {
 # any?:全ての要素が真だとtrueを返す
 puts [[0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6]].any? { |i| i.all? { |j| ans[j] }} ? "Yes" : "No"
 ```
+
+- C問題
+```
+n, m = gets.split.map(&:to_i)
+a = [0] * n
+a[0] = 1 if n != 1
+b = []
+m.times {
+  s, c = gets.split.map(&:to_i)
+  if b[s] && b[s] != c || s == 1 && c == 0 && n != 1
+    puts "-1"
+    exit
+  end
+  b[s] = c
+  a[s - 1] = c
+}
+puts a.map { |i| i.to_s } * ""
+```
