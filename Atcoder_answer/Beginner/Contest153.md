@@ -51,3 +51,28 @@ h = gets.split.map(&:to_i).sort
 h.pop(k)
 puts h.empty? ? 0 : h.sum
 ```
+
+- D問題
+```
+h = gets.to_i
+cnt = 0
+d = 1
+while h > 0
+  cnt += d
+  d *= 2
+  h /= 2
+end
+puts cnt
+
+# 別解
+h = gets.to_i
+cnt = 0
+num = 1
+while h > 0
+  cnt += num
+  break if h == 1
+  h = (h / 2).floor
+  num *= 2
+end
+puts cnt
+```
