@@ -22,3 +22,18 @@ puts [a_ary.join, b_ary.join].min
 a, b = gets.split.map(&:to_i)
 puts [a.to_s * b, b.to_s * a].min
 ```
+
+- C問題
+```
+n = gets.to_i
+p = gets.split.map(&:to_i)
+min = p[0]
+cnt = 0
+p.each { |i|
+  if min >= i
+    cnt += 1
+    min = i
+  end
+}
+puts cnt
+```
