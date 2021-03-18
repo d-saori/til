@@ -31,3 +31,23 @@ else
   puts [n * m - a, 0].max
 end
 ```
+
+- C問題
+```
+n, m = gets.split.map(&:to_i)
+ac = {}
+wa = {}
+wa_cnt = 0
+m.times {
+  p, s = gets.chomp.split
+  if ac[p]
+    next
+  elsif s == "WA"
+    wa[p] = (wa[p] || 0) + 1
+  elsif s == "AC"
+    ac[p] = "AC"
+    wa_cnt += wa[p].to_i
+  end
+}
+puts "#{ac.size} #{wa_cnt}"
+```
