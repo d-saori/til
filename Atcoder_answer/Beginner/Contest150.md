@@ -20,3 +20,21 @@ n = gets.to_i
 s = gets.chomp
 puts s.scan("ABC").count
 ```
+
+- C問題
+```
+n = gets.to_i
+p = gets.split.map(&:to_i)
+q = gets.split.map(&:to_i)
+m = [*1..n].permutation(n).to_a
+a = m.index(p).to_i + 1
+b = m.index(q).to_i + 1
+puts (a - b).abs
+
+# 別解
+n = gets.to_i
+p = gets.split.map(&:to_i)
+q = gets.split.map(&:to_i)
+m = (1..n).to_a.permutation(n).to_a
+puts (m.index(p) - m.index(q)).abs
+```
