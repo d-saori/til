@@ -38,3 +38,26 @@ end
 
 puts "0 #{b - (k - a)}"
 ```
+
+- C問題
+```
+x = gets.to_i
+while true
+  (2..x).each { |i|
+    if i == x
+      puts x
+      exit
+    end
+    break if x % i == 0
+  }
+  x += 1
+end
+
+# 別解
+require 'prime'
+x = gets.to_i
+until x.prime?
+  x += 1
+end
+puts x
+```
