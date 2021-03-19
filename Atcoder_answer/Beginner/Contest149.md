@@ -15,13 +15,14 @@ puts gets.split.reverse.join
 ```
 a, b, k = gets.split.map(&:to_i)
 if a < k
-  b = [b - (k - a), 0].max
-  a = 0
+  if b - (k - a) < 0
+    puts [0, 0].join(" ")
+  else
+    puts [0, b - (k - a)].join(" ")
+  end
 else
-  a -= [a, k].min
+  puts [a - k, b]
 end
-puts "#{a} #{b}"
-# puts [a, b].join(" ")
 
 # 別解
 a, b, k = gets.split.map(&:to_i)
