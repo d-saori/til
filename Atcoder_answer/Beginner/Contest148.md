@@ -37,3 +37,16 @@ puts st.join
 a, b = gets.split.map(&:to_i)
 puts a.lcm(b)
 ```
+
+- D問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+# 任意のレンガを砕いて1,2,3..と順列が作れるかどうか判定する
+# 1が無ければ-1
+cnt = 0
+a.each { |i|
+  cnt += 1 if cnt + 1 == i
+}
+puts cnt == 0 ? -1 : n - cnt
+```
