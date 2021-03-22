@@ -50,3 +50,26 @@ s = gets.chomp.chars
 a = "A".ord
 puts s.map { |i| ((i.ord - a + n) % 26 + a).chr }.join
 ```
+
+- C問題
+```
+a, b, x = gets.split.map(&:to_i)
+m = [x, 10**9].min
+y = (0...m).bsearch { |i|
+  j = m - i
+  a * j + b * j.to_s.size <= x
+}
+puts y ? m - y : 0
+
+# 別解
+a, b, x = gets.split.map(&:to_i)
+ans = 0
+# 10**9 = 10桁
+10.downto(1).each { |d|
+  next if x < d * b
+  max = (x - d * b) / a
+  max = [max, 10 ** d - 1].min
+  ans = [max, ans].max
+}
+puts [ans, 10**9].min
+```
