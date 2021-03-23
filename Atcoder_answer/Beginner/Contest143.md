@@ -30,3 +30,10 @@ n = gets.to_i
 d = gets.split.map(&:to_i)
 puts d.combination(2).map { |i, j| i * j }.sum
 ```
+
+- C問題
+```
+n = gets.to_i
+s = gets.chomp
+puts s.squeeze.size
+```
