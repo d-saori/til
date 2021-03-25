@@ -23,3 +23,18 @@ odd = s.select.with_index { |_, i| i.even? }
 even = s.select.with_index { |_, i| i.odd? }
 puts odd.each.count { |i| "RUD".include?(i) } + even.each.count { |j| "LUD".include?(j) } == s.size ? "Yes" : "No"
 ```
+
+- C問題
+```
+n, k, q = gets.split.map(&:to_i)
+a = q.times.map { gets.to_i }
+# n人全てのポイントからq回分のポイントを引いておく
+ary = [k-q] * n
+# 正解した人にポイントを足していく
+q.times { |i|
+  ary[a[i]-1] += 1
+}
+b.each { |j|
+  puts j <= 0 ? "No" : "Yes"
+}
+```
