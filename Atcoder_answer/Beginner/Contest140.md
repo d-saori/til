@@ -43,3 +43,14 @@ n.times { |i|
 }
 puts b + s
 ```
+
+- C問題
+```
+n = gets.to_i
+b = gets.split.map(&:to_i)
+ans = b[0]
+(n - 1).times { |i|
+  ans += b[i, 2].min
+}
+puts ans
+```
