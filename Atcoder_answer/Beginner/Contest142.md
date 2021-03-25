@@ -38,3 +38,22 @@ n, k = gets.split.map(&:to_i)
 h = gets.split.map(&:to_i)
 puts h.count { |i| i >= k }
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+ary = Array.new(n)
+n.times { |i|
+  ary[a[i]-1] = i + 1
+}
+puts ary.join(" ")
+
+# 別解
+n = gets.to_i
+a = gets.split.map(&:to_i)
+a.each_with_index { |i, idx|
+  a[i - 1] = idx + 1
+}
+puts a.join(" ")
+```
