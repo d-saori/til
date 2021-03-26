@@ -49,3 +49,9 @@ h = gets.split.map(&:to_i)
 m = h.slice_when { |a, b| a < b }
 puts (m.map(&:size).max - 1)
 ```
+
+- D問題
+```
+n = gets.to_i
+puts n * (n - 1) / 2
+```
