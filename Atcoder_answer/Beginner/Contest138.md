@@ -14,14 +14,13 @@ end
 ```
 n = gets.to_i
 a = gets.split.map(&:to_f)
-sum = 0.0
+sum = 0
 a.each { |i|
   sum += 1 / i
 }
-p sum
 puts 1.0 / sum
 
-もしくは
+# 別解
 n = gets.to_i
 a = gets.split.map(&:to_i)
 sum = a.map { |i| 1.0 / i }.sum
