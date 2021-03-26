@@ -1,6 +1,18 @@
 - A問題
 ```
 a, b, n = 3.times.map { gets.to_i }
+ans = 0
+while
+  if n % a == 0 && n % b == 0
+    ans = n
+    break
+  end
+  n += 1
+end
+puts ans
+
+# 別解
+a, b, n = 3.times.map { gets.to_i }
 min = a.lcm(b)
 ans = min
 while ans < n
