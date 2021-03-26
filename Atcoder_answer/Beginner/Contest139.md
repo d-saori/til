@@ -26,3 +26,26 @@ puts cnt
 a, b = gets.split.map(&:to_i)
 puts ((b - 1) / (a - 1).to_f).ceil
 ```
+
+- C問題
+```
+n = gets.to_i
+h = gets.split.map(&:to_i)
+cnt = 0
+ans = 0
+h.each_cons(2) { |a, b|
+  if a >= b
+    cnt += 1
+  else
+    cnt = 0
+  end
+  ans = [ans, cnt].max
+}
+puts ans
+
+# 別解
+n = gets.to_i
+h = gets.split.map(&:to_i)
+m = h.slice_when { |a, b| a < b }
+puts (m.map(&:size).max - 1)
+```
