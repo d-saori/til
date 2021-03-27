@@ -30,3 +30,37 @@ sum = 0
 }
 puts sum
 ```
+
+- C問題
+```
+n = gets.to_i
+h = gets.split.map(&:to_i)
+max = 0
+(1..n-1).each { |i|
+  if h[i] < max - 1
+    puts "No"
+    exit
+  end
+  max = [max, h[i]].max
+}
+puts "Yes"
+
+# 別解
+n = gets.to_i
+h = gets.split.map(&:to_i)
+max = h[-1]
+flag = true
+h.reverse.each { |i|
+  if i <= max
+    max = i
+  else
+    if i - 1 == max
+      next
+    else
+      flag = false
+      break
+    end
+  end
+}
+puts flag ? "Yes" : "No"
+```
