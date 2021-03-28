@@ -34,7 +34,7 @@ ary = [k-q] * n
 q.times { |i|
   ary[a[i]-1] += 1
 }
-b.each { |j|
+ary.each { |j|
   puts j <= 0 ? "No" : "Yes"
 }
 ```
