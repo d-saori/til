@@ -13,6 +13,15 @@ end
 - B問題（https://atcoder.jp/contests/abc138/tasks/abc138_b）
 ```
 n = gets.to_i
+a = gets.split.map(&:to_i)
+b = []
+a.each { |i|
+  b << 1 / i.to_f
+}
+puts 1 / b.sum
+
+# 別解
+n = gets.to_i
 a = gets.split.map(&:to_f)
 sum = 0
 a.each { |i|
@@ -24,7 +33,7 @@ puts 1.0 / sum
 n = gets.to_i
 a = gets.split.map(&:to_i)
 sum = a.map { |i| 1.0 / i }.sum
-puts (1.0 / sum)
+puts 1 / sum
 ```
 
 - C問題
