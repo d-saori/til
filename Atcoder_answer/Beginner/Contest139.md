@@ -46,6 +46,16 @@ puts ans
 # 別解
 n = gets.to_i
 h = gets.split.map(&:to_i)
+a = h.slice_when { |i, j| i < j }
+b = []
+a.each { |i|
+  b << i.size - 1
+}
+puts b.max
+
+# 別解
+n = gets.to_i
+h = gets.split.map(&:to_i)
 m = h.slice_when { |a, b| a < b }
 puts (m.map(&:size).max - 1)
 ```
