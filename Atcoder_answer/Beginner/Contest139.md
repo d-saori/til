@@ -63,5 +63,6 @@ puts (m.map(&:size).max - 1)
 - D問題
 ```
 n = gets.to_i
+# 1から(n-1)の和を求める
 puts n * (n - 1) / 2
 ```
