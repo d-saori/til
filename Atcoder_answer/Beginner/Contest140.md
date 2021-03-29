@@ -53,4 +53,17 @@ ans = b[0]
   ans += b[i, 2].min
 }
 puts ans
+
+# 別解
+n = gets.to_i
+b = gets.split.map(&:to_i)
+a = b[0] + b[-1]
+(n-2).times { |i|
+  if b[i] < b[i+1]
+    a += b[i]
+  else
+    a += b[i+1]
+  end
+}
+puts a
 ```
