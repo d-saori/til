@@ -35,6 +35,15 @@ puts sum
 ```
 n = gets.to_i
 h = gets.split.map(&:to_i)
+max = 1
+puts h.each_cons(2).all? { |i, j|
+  max = i - 1 if max < i - 1
+  max <= j
+} ? "Yes" : "No"
+
+# 別解
+n = gets.to_i
+h = gets.split.map(&:to_i)
 max = 0
 (1..n-1).each { |i|
   if h[i] < max - 1
