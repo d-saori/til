@@ -40,6 +40,15 @@ puts 1 / sum
 ```
 # 小さい数字ほど多く割られるようにしておけば最終値は最大値になる
 n = gets.to_i
+v = gets.split.map(&:to_f).sort!
+a = v.shift
+v.each { |i|
+  a = (a + i) / 2
+}
+puts a
+
+# 別解
+n = gets.to_i
 v = gets.split.map(&:to_f).sort
 (n-1).times {
   x = v.shift
@@ -47,13 +56,4 @@ v = gets.split.map(&:to_f).sort
   v.unshift((x + y) / 2)
 }
 puts v.first
-
-# 別解
-n = gets.to_i
-v = gets.split.map(&:to_f).sort!
-a = v.shift
-v.each { |i|
-  a = (a + i.to_f) / 2
-}
-puts a
 ```
