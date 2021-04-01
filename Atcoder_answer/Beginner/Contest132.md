@@ -13,5 +13,15 @@ end
 ```
 n = gets.to_i
 p = gets.split.map(&:to_i)
+cnt = 0
+p.each_cons(3) { |i|
+  j = i.sort
+  cnt += 1 if i[1] == j[1]
+}
+puts cnt
+
+# 別解
+n = gets.to_i
+p = gets.split.map(&:to_i)
 puts p.each_cons(3).count { |i| i[1] == i.sort[1] }
 ```
