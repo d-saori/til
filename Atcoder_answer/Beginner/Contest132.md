@@ -25,3 +25,15 @@ n = gets.to_i
 p = gets.split.map(&:to_i)
 puts p.each_cons(3).count { |i| i[1] == i.sort[1] }
 ```
+
+- C問題
+```
+# 「n/2番目に難しい問題:ARC用の問題、n/2-1番目に難しい問題:ABC用の問題」と「ARC用の問題の数とABC用の問題の数が同じ」は同値
+n = gets.to_i
+d = gets.split.map(&:to_i)
+d.sort!
+c = n / 2
+l = d[c - 1]
+r = d[c]
+puts r - l
+```
