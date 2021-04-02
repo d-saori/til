@@ -33,3 +33,15 @@ n.times { |i|
 taste = taste.sort_by { |j| j.abs }
 puts taste.sum - taste[0]
 ```
+
+- C問題
+```
+# 全体の数(x) - cで割れる数(x/c) - dで割れる数(x/d) + cとdどちらでも割れる数(x/c.lcm(d))
+# aまでで cで割り切れる数 + dで割り切れる数 - 公約数で割り切れる数
+a, b, c, d = gets.split.map(&:to_i)
+lcm = c.lcm(d)
+a -= 1
+x = a - ((a/c).to_i + (a/d).to_i - (a/lcm).to_i)
+y = b - ((b/c).to_i + (b/d).to_i - (b/lcm).to_i)
+puts y - x
+```
