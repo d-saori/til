@@ -9,6 +9,17 @@ puts [p + q, r + q, r + p].min
 ```
 n = gets.to_i
 w = gets.split.map(&:to_i)
+ans = 0
+sum = w.sum
+puts w[0..-2].map { |i|
+  ans += i
+  sum -= i
+  (ans - sum).abs
+}.min
+
+# 別解
+n = gets.to_i
+w = gets.split.map(&:to_i)
 x = w.sum
 y = 0
 ans = n
