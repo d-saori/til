@@ -12,23 +12,33 @@ n = gets.to_i
 rank = []
 n.times { |i|
   s, p = gets.split
-  rank << [s, p.to_i, i + 1]
-}
-rank.sort_by { |a| [a[0], -a[1]] }.each { |a|
-  puts a[2]
-}
-
-# 別解
-n = gets.to_i
-rank = []
-n.times { |i|
-  s, p = gets.split
   p = p.to_i
   rank << [s, -p, i+1]
 }
 rank.sort!
 rank.each { |a, b, j|
   puts j
+}
+
+# 別解
+n = gets.to_i
+rank = []
+n.times { |i|
+  s, p = gets.chomp.split
+  rank << [s, p.to_i, i + 1]
+}
+rank.sort_by! { |a, b, j| [a, b] }
+puts rank.map!(&:last)
+
+# 別解
+n = gets.to_i
+rank = []
+n.times { |i|
+  s, p = gets.split
+  rank << [s, p.to_i, i + 1]
+}
+rank.sort_by { |a| [a[0], -a[1]] }.each { |a|
+  puts a[2]
 }
 ```
 
@@ -44,4 +54,13 @@ cnt = (1 << n).times.count { |state|
   }
 }
 puts cnt
+
+# 別解
+n, m = gets.split.map(&:to_i)
+ligths = m.times.map { gets.split.map(&:to_i)[1..-1] }
+ps = gets.split.map(&:to_i)
+ans = (2**n).times.count { |i|
+  m.times.all? { |j| ligths[j].count { |k| i[k - 1] == 1 } % 2 == ps[j] }
+}
+puts ans
 ```
