@@ -20,7 +20,7 @@ Tasks: TOP => db:migrate
 $ rails db:migrate:reset
 を実行したら成功した
 ```
-- rails db:migrate:resetについて参考:https://blog.naichilab.com/entry/db_reset-vs-db_migrate_reset
+- rails db:migrate:resetについて参考:https://blog.naichilab.com/entry/db_reset-vs-db_migrate_reset https://shonoooo.hatenablog.com/entry/2016/07/13/231338
 ```
 # rails db:migrate:reset は db:seed は実行されないので
 $ rails db:seed
