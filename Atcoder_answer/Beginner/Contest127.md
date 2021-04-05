@@ -22,6 +22,14 @@ r, d, x = gets.split.map(&:to_i)
 
 # 別解
 r, d, x = gets.split.map(&:to_i)
+10.times {
+  a = r * x - d
+  puts a
+  x = a
+}
+
+# 別解
+r, d, x = gets.split.map(&:to_i)
 (1..10).each { |i|
   puts r * x - d
   x = r * x - d
