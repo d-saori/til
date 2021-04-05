@@ -35,3 +35,13 @@ r, d, x = gets.split.map(&:to_i)
   x = r * x - d
 }
 ```
+
+- C問題
+```
+# 全部ゲート共通している区間を求める
+n, m = gets.split.map(&:to_i)
+l, r = m.times.map { gets.split.map(&:to_i) }.transpose
+l = l.max
+r = r.min
+puts [r - l + 1, 0].max
+```
