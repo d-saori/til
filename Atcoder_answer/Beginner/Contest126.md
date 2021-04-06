@@ -29,4 +29,13 @@ elsif mmyy
 else
   puts "NA"
 end
+
+# 別解
+s = gets.chomp
+m = s[0..1].to_i
+n = s[2..3].to_i
+w = ["NA", "YYMM", "MMYY", "AMBIGUOUS"]
+x = (1 <= m && m <= 12) ? 2 : 0
+y = (1 <= n && n <= 12) ? 1 : 0
+puts w[x + y]
 ```
