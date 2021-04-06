@@ -39,3 +39,18 @@ x = (1 <= m && m <= 12) ? 2 : 0
 y = (1 <= n && n <= 12) ? 1 : 0
 puts w[x + y]
 ```
+
+- C問題
+```
+n, k = gets.split.map(&:to_f)
+ans = 0
+(1..n).each { |i|
+  j = 1 / n
+  while i < k
+    i *= 2
+    j /= 2
+  end
+  ans += j
+}
+puts ans
+```
