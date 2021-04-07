@@ -34,3 +34,20 @@ ans = 0
 v.zip(c).map{ |x, y| ans += x - y if x > y}
 puts ans
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+d = 0
+s = a.map { |i|
+  d = d.gcd(i)
+}
+d = 0
+t = a.reverse.map { |i|
+  d = d.gcd(i)
+}.reverse
+puts n.times.map { |i|
+  (i > 0 ? s[i - 1] : 0).gcd(i < n - 1 ? t[i + 1] : 0)
+}.max
+```
