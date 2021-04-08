@@ -24,5 +24,18 @@ end
 ```
 n = gets.to_i
 h = gets.split.map(&:to_i)
+cnt = 0
+max = 0
+h.each { |i|
+  if max <= i
+    cnt += 1
+    max = i
+  end
+}
+puts cnt
+
+# 別解
+n = gets.to_i
+h = gets.split.map(&:to_i)
 puts n.times.count { |i| h[0..i].max == h[i] }
 ```
