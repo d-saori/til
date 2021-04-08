@@ -39,3 +39,13 @@ n = gets.to_i
 h = gets.split.map(&:to_i)
 puts n.times.count { |i| h[0..i].max == h[i] }
 ```
+
+- C問題
+```
+s = gets.chomp
+cnt = 0
+s.size.times { |i|
+  cnt += 1 if i % 2 != s[i].to_i
+}
+puts [cnt, s.size - cnt].min
+```
