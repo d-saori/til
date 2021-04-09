@@ -32,3 +32,10 @@ a = 5.times.map { gets.to_i }
 b = a.map { |i| (i % 10) == 0 ? 0 : 10 - (i % 10) }
 puts a.sum + b.sum - b.max
 ```
+
+- C問題
+```
+n = gets.to_i
+a = 5.times.map { gets.to_f }.min
+puts (n / a).ceil + 4
+```
