@@ -21,10 +21,15 @@ puts cnt
 # 別解
 n, m, c = gets.split.map(&:to_i)
 b = gets.split.map(&:to_i)
+t = []
 cnt = 0
 n.times {
   a = gets.split.map(&:to_i)
-  cnt += 1 if m.times.map{ |i| a[i] * b[i] }.sum + c > 0
+  t << b.zip(a).map { |x, y|
+    x * y
+  }
 }
-puts cnt
+puts t.select { |i|
+  i.sum + c > 0
+}.count
 ```
