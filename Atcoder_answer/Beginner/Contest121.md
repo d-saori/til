@@ -33,3 +33,17 @@ puts t.select { |i|
   i.sum + c > 0
 }.count
 ```
+
+- C問題
+```
+n, m = gets.split.map(&:to_i)
+ab = n.times.map { gets.split.map(&:to_i) }.sort
+# ab = n.times.map { gets.split.map(&:to_i) }.sort_by { |a| a[0] }
+sum = 0
+ab.each { |x, y|
+  break if m < 0
+  sum += x * [m, y].min
+  m -= y
+}
+puts sum
+```
