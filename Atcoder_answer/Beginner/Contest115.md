@@ -28,3 +28,17 @@ n = gets.to_i
 p = n.times.map { gets.to_i }
 puts p.sum - p.max / 2
 ```
+
+- C問題
+```
+# 最も高い木と最も低い木の高さの差を近づけるには、低い順に並べたk本の隣り合った木を飾るべき
+# 「左から1,2,..k本目」「左から2,3,..k+1本目」「n-k+1,n-k+2,..n本目」
+n, k = gets.split.map(&:to_i)
+h = n.times.map { gets.to_i }.sort
+ans = 10 ** 9
+(n-k+1).times { |i|
+  n = h[i+k-1] - h[i]
+  ans = n if n < ans
+}
+puts ans
+```
