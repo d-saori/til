@@ -37,4 +37,14 @@ s = gets.chomp.chars
 s0 = s.count("0")
 s1 = s.count("1")
 puts s0 >= 1 && s1 >= 1 ? 2 * [s0, s1].min : 0
+
+# 別解
+s = gets.chomp
+# 文字列sに0も1も1つ以上残っている場合、どこかで0と1が隣り合っている
+# 文字列sに含まれる0と1の個数をそれぞれ数え、c0とc1する
+# どのような順番で取り除いてもmin(c0, c1)回取り除く操作ができる
+# 取り除けるキューブの個数の最大値 = 2 * min(c0, c1)
+cnt0 = s.count("0")
+cnt1 = s.count("1")
+puts [cnt0, cnt1].min * 2
 ```
