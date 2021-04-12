@@ -27,4 +27,18 @@ while
   t << s
 end
 puts t.size + 1
+``｀
+
+- C問題
+```
+n = gets.to_i
+h = gets.split.map(&:to_i)
+ans = 0
+(1..h.size-1).each { |i|
+  if h[i-1] > h[i]
+    ans += h[i-1] - h[i]
+  end
+}
+ans += h[-1]
+puts ans
 ```
