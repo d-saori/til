@@ -36,3 +36,17 @@ n.times {
 }
 puts (1..m).map { |i| ary.count(i) }.count(n)
 ```
+
+- C問題
+```
+# 入力例1の場合、どのモンスターも初期体力が偶数なので、攻撃してたいちょくが変化しても偶数にしか変化しない
+# aもb(b>a)もxの倍数なら、b-aもxの倍数
+# 最大公約数gとすると、常にxとしてgを取れるので生きているモンスターの体力は必ずgの倍数となる
+n = gets.to_i
+a = gets.split.map(&:to_i)
+g = a[0]
+a.each { |i|
+  g = g.gcd(i)
+}
+puts g
+```
