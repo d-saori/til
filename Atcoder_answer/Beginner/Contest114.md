@@ -40,3 +40,33 @@ ans = 753
 }
 puts ans
 ```
+
+- C問題
+```
+n = gets.to_i
+a = ["3", "5", "7"]
+cnt = 0
+3.step(9) { |i|
+  cnt += a.repeated_permutation(i).count { |j|
+    j.uniq.size == 3 && j.hoin.to_i <= n
+  }
+}
+puts cnt
+
+# 別解
+N = gets.to_i
+$cnt = 0
+def f(n)
+  if n > N
+    return
+  else
+    s = "#{n}"
+    $cnt += 1 if s[?7] && s[?5] && s[?3]
+    f(n * 10 + 7)
+    f(n * 10 + 5)
+    f(n * 10 + 3)
+  end
+end
+f 0
+puts $cnt
+```
