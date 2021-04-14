@@ -45,3 +45,23 @@ cnt = 0
 }
 puts cnt
 ```
+
+
+- C問題
+```
+s = gets.chomp.chars
+k = gets.to_i
+ans = 0
+s.each { |i|
+  if i != 1
+    puts i
+    exit
+  else
+    ans += 1
+    if k == ans
+      puts 1
+      exit
+    end
+  end
+}
+```
