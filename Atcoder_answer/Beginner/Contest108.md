@@ -10,8 +10,8 @@ puts (k / 2) * (k - k / 2)
 
 - B問題
 ```
-a, b, c, d = gets.split.map(&:to_i)
-x = c - a
-y = d - b
-puts [c - y, d + x, a - y, b + x].join(" ")
+x1, y1, x2, y2 = gets.split.map(&:to_i)
+x = x2 - x1
+y = y2 - y1
+puts [x2 - y, y2 + x, x1 - y, y1 + x].join(" ")
 ```
