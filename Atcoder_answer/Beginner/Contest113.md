@@ -30,3 +30,25 @@ h = gets.split.map(&:to_i)
 
 puts (1..n).min_by { |x| (a - t + h[x - 1] * 0.006).abs }
 ```
+
+- C問題
+```
+n, m = gets.split.map(&:to_i)
+arr = []
+hash = {}
+m.times {
+  pi, yi = gets.split.map(&:to_i)
+  hash[pi] ||= {}
+  hash[pi][yi] = true
+  arr << [pi, yi]
+}
+hash.keys.sort.each { |pi|
+  h = hash[pi]
+  h.keys.sort.each_with_index { |yi, i|
+    h[yi] = i + 1
+  }
+}
+arr.each { |pi, yi|
+  puts "00000#{pi}"[-6..-1] + "00000#{hash[pi][yi]}"[-6..-1]
+}
+```
