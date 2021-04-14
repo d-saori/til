@@ -20,3 +20,13 @@ w.each_cons(2) { |a, b|
 }
 puts cnt == 0 && w.uniq.size == w.size ? "Yes" : "No"
 ```
+
+- C問題
+```
+# y+DはD分ジャンプ(移動)する
+n, x = gets.split.map(&:to_i)
+m = gets.split.map(&:to_i)
+puts m.map { |i|
+  (x - i).abs
+}.inject(&:gcd)
+```
