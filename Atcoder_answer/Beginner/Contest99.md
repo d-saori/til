@@ -24,4 +24,11 @@ a, b = gets.split.map(&:to_i)
 # 上記より2本の塔の高さの差は、x:b-a
 # bの塔全体の高さ:(1+2+3+..+b-a)から雪に埋もれていない部分を引けば、積もった雪の高さがでる
 puts [*1..(b-a)].sum - b
+
+# 別解
+a, b = gets.split.map(&:to_i)
+m = b - a
+b_sum = 0
+[*1..m].each { |i| b_sum += i }
+puts b_sum - b
 ```
