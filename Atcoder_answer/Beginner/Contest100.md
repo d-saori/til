@@ -24,3 +24,17 @@ else
   puts n * 10000
 end
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+cnt = 0
+a.each { |i|
+  while i.even?
+    i /= 2
+    cnt += 1
+  end
+}
+puts cnt
+```
