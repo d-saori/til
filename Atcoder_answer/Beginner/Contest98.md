@@ -27,3 +27,25 @@ cnt = []
 }
 puts cnt.max
 ```
+
+- C問題
+```
+n = gets.to_i
+s = gets.chomp.chars
+left = 0
+right = s.count("E")
+ans = n
+n.times { |i|
+  t = 0
+  curr = s[i]
+  if curr == "W"
+    t = left + right
+    left += 1
+  else
+    right -= 1
+    t = left + right
+  end
+  ans = t if t < ans
+}
+puts ans
+```
