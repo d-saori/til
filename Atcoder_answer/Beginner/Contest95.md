@@ -36,7 +36,6 @@ puts n + (x - a.sum) / (a.min)
 - c問題（https://atcoder.jp/contests/abc095/tasks/arc096_a）
 ```
 a, b, c, x, y = gets.split.map(&:to_i)
-
 ma = a * x
 mb = b * y
 mc = 2 * c * [x, y].max
@@ -56,4 +55,17 @@ puts [
   a * (x - z) + b * (y - z) + 2 * c * z,
   2 * c * [x, y].max
 ].min
+
+a, b, c, x, y = gets.split.map(&:to_i)
+z = (a * x) + (b * y)
+min = [x, y].min
+max = [x, y].max
+w = max * 2 * c
+s = min * 2 * c
+if x > y
+  t = (x - y) * a
+else
+  t = (y - x) * b
+end
+puts [z, s + t, w].min
 ```
