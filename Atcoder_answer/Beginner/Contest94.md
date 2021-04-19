@@ -32,3 +32,16 @@ n, m, x = gets.split.map(&:to_i)
 a = gets.split.map(&:to_i)
 puts [a.count { |i| i < x }, a.count { |i| i > x }].min
 ```
+
+- C問題
+```
+n = gets.to_i
+x = gets.split.map(&:to_i)
+y = x.sort
+left = y[(n - 1) / 2]
+right = y[((n - 1) / 2) + 1]
+ans = x.map { |i|
+  i <= left ? right : left
+}
+puts ans
+```
