@@ -6,14 +6,16 @@ puts s == "abc" ? "Yes" : "No"
 
 - B問題（https://atcoder.jp/contests/abc093/tasks/abc093_b）
 ```
-# 自分の提出コード（不正解）
 a, b, k = gets.split.map(&:to_i)
-t = [*a..b]
-puts 2 * k < t.size ? [t[0..k-1], t[-2..-1]] : t
+left = [*a...[a+k, b].min]
+right = [*[b-k+1, a].max..b]
+puts (left + right).uniq
 
-# 正解
+# 別解
+# b - a + 1 = aとbの間の整数の個数
+# b - a + 1 > 2 * k
 a, b, k = gets.split.map(&:to_i)
-puts ((a..b).first(k) + (-b..-a).first(k)).map(&:abs).uniq.sort
+puts b - a + 1 > 2 * k ? [*a..a+k-1] + [*b-k+1..b] : [*a..b]
 ```
 
 - C問題（https://atcoder.jp/contests/abc093/tasks/arc094_a）
