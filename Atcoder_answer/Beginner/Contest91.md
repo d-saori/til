@@ -14,4 +14,11 @@ red = m.times.map { gets.chomp }
 
 ans = blue.uniq.map { |i| blue.count(i) - red.count(i) }.max
 puts ans > 0 ? ans : 0
+
+# 別解
+n = gets.to_i
+blue = n.times.map { gets.chomp }
+m = gets.to_i
+red = m.times.map { gets.chomp }
+puts [blue.uniq.map { |i| blue.count(i) - red.count(i) }.max, 0].max
 ```
