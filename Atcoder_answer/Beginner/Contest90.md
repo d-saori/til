@@ -22,3 +22,20 @@ puts cnt
 a, b = gets.chomp.split
 puts (a..b).select { |i| i == i.reverse }.count
 ```
+
+- C問題
+```
+# 偶数回裏返されるカード：全操作終了後は表
+# 奇数回裏返されるカード：全操作終了後は裏
+# 各マスのカードが何回裏返されるかを考える
+n, m = gets.split.map(&:to_i)
+if n == 1 && m == 1
+  puts 1
+elsif n == 1
+  puts m - 2
+elsif m == 1
+  puts n - 2
+else
+  puts (n - 2) * (m - 2)
+end
+```
