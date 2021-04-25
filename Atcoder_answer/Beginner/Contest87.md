@@ -28,3 +28,19 @@ cnt = 0
 }
 puts cnt
 ```
+
+- C問題
+```
+# 移動方法は、右にi回、下に1回、右にn-i回
+n = gets.to_i
+a = 2.times.map { gets.split.map(&:to_i) }
+(1..n-1).each { |i|
+  a[0][i] += a[0][i-1]
+  a[1][n-1-i] += a[1][n-i]
+}
+m = 0
+(0..n-1).each { |i|
+  m = [m, a[0][i] + a[1][i]].max
+}
+puts m
+```
