@@ -16,4 +16,14 @@ a, b = gets.chomp.split
 n = (a + b).to_i
 m = Math.sqrt(n).to_i
 puts m ** 2 == n ? "Yes" : "No"
+
+# 別解
+a, b = gets.chomp.split
+c = (a + b).to_f
+puts (c ** 0.5).ceil == c ** 0.5 ? "Yes" : "No"
+```
+
+- C問題
+```
+
 ```
