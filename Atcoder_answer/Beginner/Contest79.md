@@ -17,3 +17,16 @@ n.times {
 }
 puts ary[n]
 ```
+
+- C問題
+```
+a, b, c, d = gets.chomp.chars
+["+", "-"].repeated_permutation(3) { |op1, op2, op3|
+  e = a + op1 + b + op2 + c + op3 + d
+  # eval("puts 'e'")
+  if eval(e) == 7
+    puts "#{e}=7"
+    exit
+  end
+}
+```
