@@ -23,7 +23,17 @@ while true
 end
 puts ans - 1
 
-もしくは
+# 別解
+x, y, z = gets.split.map(&:to_i)
+sum = y + (z * 2)
+cnt = 0
+while sum <= x
+  sum += y + z
+  cnt += 1
+end
+puts cnt
+
+# 別解
 x, y, z = gets.split.map(&:to_i)
 puts (x - z) / (y + z)
 ```
