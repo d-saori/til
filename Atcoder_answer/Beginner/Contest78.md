@@ -37,3 +37,13 @@ puts cnt
 x, y, z = gets.split.map(&:to_i)
 puts (x - z) / (y + z)
 ```
+
+- C問題
+```
+n, m = gets.split.map(&:to_i)
+k = 1
+m.times {
+  k *= 2
+}
+puts ((n - m) * 100 + 1900 * m) * k
+```
