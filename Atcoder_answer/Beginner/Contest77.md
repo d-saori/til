@@ -20,4 +20,9 @@ n = gets.to_i
 # sqrtメソッド:非負整数 n の整数の平方根を返す(n の平方根以下の最大の非負整数を返す)
 a = Math.sqrt(n).truncate
 puts a ** 2
+
+# 別解
+n = gets.to_i
+a = Math.sqrt(n).to_i
+puts a ** 2
 ```
