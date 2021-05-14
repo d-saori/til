@@ -60,4 +60,22 @@ h.times { |y|
   }
   puts ""
 }
+
+# 別解
+h, w = gets.split.map(&:to_i)
+s = h.times.map { gets.chomp.chars }
+dx = [1, 1, 1, 0, 0, -1, -1, -1]
+dy = [1, 0, -1, 1, -1, 1, -1, 0]
+
+h.times { |x|
+  w.times { |y|
+    cnt = 0
+    8.times { |k|
+      cnt += 1 if x + dx[k] >= 0 && x + dx[k] < h && y + dy[k] >= 0 && y + dy[k] < w && s[x + dx[k]][y + dy[k]] == "#"
+    }
+    print "#" if s[x][y] == "#"
+    print cnt if s[x][y] != "#"
+  }
+  puts
+}
 ```
