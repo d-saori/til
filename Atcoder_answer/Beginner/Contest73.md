@@ -36,10 +36,29 @@ n.times {
 p ary.flatten.uniq.size
 ```
 
+
 - C問題（https://atcoder.jp/contests/abc073/tasks/abc073_c）
 ```
 # 奇数回登場する数は最後に紙に書かれているので、奇数回登場する数が何種類あるか求める
 n = gets.to_i
 a = n.times.map{gets.split.map(&:to_i)}.sort.flatten
 puts a.group_by(&:itself).count { |k, v| v.count.odd? }
+
+# 別解
+n = gets.to_i
+a = n.times.map { gets.to_i }.sort!
+succ = 1
+num = 0
+while !a.empty?
+  b = a.shift
+  while b == a.first
+    succ += 1
+    b = a.shift
+  end
+  if (succ % 2) == 1
+    num += 1
+  end
+  succ = 1
+end
+puts num
 ```
