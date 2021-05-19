@@ -8,4 +8,10 @@ puts n.reverse == n ? "Yes" : "No"
 ```
 a, b, c, d = gets.split.map(&:to_i)
 puts [[b, d].min - [a, c].max, 0].max
+
+# 別解
+a, b, c, d = gets.split.map(&:to_i)
+max = [a, c].max
+min = [b, d].min
+puts max > min ? 0 : min - max
 ```
