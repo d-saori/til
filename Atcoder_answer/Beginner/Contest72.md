@@ -35,4 +35,18 @@ a.each { |x|
   r[x + 1] += 1
 }
 puts r.values.max
+
+# 別解
+n = gets.to_i
+a = gets.split.map(&:to_i)
+t = Hash.new(0)
+a.each { |i|
+  t[i] += 1
+}
+ans = 0
+t.each { |k, v|
+  together = t[k - 1] + v + t[k + 1]
+  ans = together if ans < together
+}
+puts ans
 ```
