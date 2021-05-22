@@ -13,5 +13,5 @@ puts [[b, d].min - [a, c].max, 0].max
 a, b, c, d = gets.split.map(&:to_i)
 max = [a, c].max
 min = [b, d].min
-puts max > min ? 0 : min - max
+puts max < min ? min - max : 0
 ```
