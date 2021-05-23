@@ -15,3 +15,11 @@ max = [a, c].max
 min = [b, d].min
 puts max < min ? min - max : 0
 ```
+
+- C問題
+```
+n = gets.to_i
+t = n.times.map { gets.to_i }
+t.uniq!
+puts t.inject { |a, b| a.lcm(b) }
+```
