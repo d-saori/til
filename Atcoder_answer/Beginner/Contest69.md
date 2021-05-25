@@ -16,3 +16,19 @@ s = gets.chomp
 # s.length - 2：全体の文字数から先頭と末尾の2文字数を引く
 puts s[0] + (s.length - 2).to_s + s[-1]
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+b = 0
+c = 0
+a.each { |i|
+  if i % 4 == 0
+    c += 1
+  elsif i % 2 == 0
+    b += 1
+  end
+}
+puts c + b / 2 >= n / 2 ? "Yes" : "No"
+```
