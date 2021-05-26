@@ -25,3 +25,21 @@ n = gets.to_i
     end
 }
 ```
+
+- C問題
+```
+# 島1と島i、島iと島nのどちらの間にも定期便が通っているようなiが存在するかどうかを調べる
+n, m = gets.split.map(&:to_i)
+all = []
+check_first = []
+check_last = []
+m.times {
+  v = gets.split.map(&:to_i)
+  if v[0] == 1
+    check_first << v[1]
+  elsif v[1] == n
+    check_last << v[0]
+  end
+}
+puts (check_first & check_last)[0] != nil ? "POSSIBLE" : "IMPOSSIBLE"
+```
