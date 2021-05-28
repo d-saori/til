@@ -22,4 +22,13 @@ s = gets.chomp
     break
   end
 }
+
+# 別解
+s = gets.chomp
+(s.length - 2).step(2, -2) { |i|
+  if (0..(i / 2 -1)).all? { |j| s[j] == s[i / 2 + j] }
+    puts i
+    exit
+  end
+}
 ```
