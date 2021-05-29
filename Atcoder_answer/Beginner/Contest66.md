@@ -32,3 +32,14 @@ s = gets.chomp
   end
 }
 ```
+
+- C問題
+```
+n = gets.to_i
+a = gets.split.map(&:to_i)
+b = []
+n.times { |i|
+  i.even? ? b << a[i] : b.unshift(a[i])
+}
+puts (n.odd? ? b.reverse : b).join(" ")
+```
